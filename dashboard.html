@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intrusion Detection Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            display: flex;
+        }
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover;
+        }
+        .sidebar {
+            width: 250px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            padding: 10px;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar button {
+            background: transparent;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            width: 100%;
+            margin: 5px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: left;
+        }
+        .sidebar button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.6);
+            transform: scale(1.05);
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+            box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+            max-height: 300px;
+            overflow-y: auto;
+            width: 300px;
+        }
+        .close-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            position: relative;
+        }
+        .metrics {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        .metric {
+            text-align: center;
+            font-size: 20px;
+            text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+        }
+        .action-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .action-buttons button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .freeze-btn {
+            background-color: red;
+            color: white;
+        }
+        .allow-btn {
+            background-color: green;
+            color: white;
+        }
+        .freeze-btn:hover {
+            background-color: darkred;
+        }
+        .allow-btn:hover {
+            background-color: darkgreen;
+        }
+        .log-entry {
+            margin: 5px 0;
+            padding: 5px;
+            border-radius: 5px;
+            text-align: left;
+        }
+        .frozen-log {
+            background-color: rgba(255, 0, 0, 0.3);
+        }
+        .allowed-log {
+            background-color: rgba(0, 255, 0, 0.3);
+        }
+        .pie-chart-container {
+            width: 250px;
+            height: 250px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<video autoplay muted loop class="video-background">
+    <source src="C:\Users\VIJAY\Downloads\206846_medium.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+
+<!-- Sidebar -->
+<div class="sidebar">
+    <button onclick="toggleAnalytics()">📊 Analytics</button>
+    <button onclick="toggleLogs()">📜 Logs</button>
+    <button onclick="showSettings()">⚙ Settings</button>
+    <button onclick="showReports()">📈 Reports</button>
+    <button onclick="exitApp()">❌ Exit</button>
+</div>
+
+<!-- Analytics Pop-up -->
+<div class="popup" id="analyticsPopup">
+    <h3>📊 Intrusion Overview</h3>
+    <div class="pie-chart-container">
+        <canvas id="intrusionPieChart"></canvas>
+    </div>
+    <button class="close-btn" onclick="toggleAnalytics()">Close</button>
+</div>
+
+<!-- Logs Pop-up -->
+<div class="popup" id="logsPopup">
+    <h3>📜 Intrusion Logs</h3>
+    <div id="logsContainer"></div>
+    <button class="close-btn" onclick="toggleLogs()">Close</button>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="metrics">
+        <div class="metric" id="totalIntrusions">🔴 Total Intrusions: 0</div>
+        <div class="metric" id="totalFrozen">🛑 Frozen: 0</div>
+        <div class="metric" id="totalAllowed">✅ Allowed: 0</div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="action-buttons">
+        <button class="freeze-btn" onclick="freezeIntrusion()">🚫 Freeze Intrusion</button>
+        <button class="allow-btn" onclick="allowIntrusion()">✅ Allow Intrusion</button>
+    </div>
+</div>
+
+<script>
+    let frozenCount = 0;
+    let allowedCount = 0;
+    let pieChart;
+
+    function toggleAnalytics() {
+        let popup = document.getElementById('analyticsPopup');
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+        if (popup.style.display === 'block') setTimeout(renderPieChart, 50);
+    }
+
+    function toggleLogs() {
+        let popup = document.getElementById('logsPopup');
+        popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+    }
+
+    function updateMetrics() {
+        let intrusionsCount = frozenCount + allowedCount;
+        document.getElementById('totalIntrusions').innerText = 🔴 Total Intrusions: ${intrusionsCount};
+        document.getElementById('totalFrozen').innerText = 🛑 Frozen: ${frozenCount};
+        document.getElementById('totalAllowed').innerText = ✅ Allowed: ${allowedCount};
+        renderPieChart();
+    }
+
+    function freezeIntrusion() {
+        frozenCount++;
+        updateMetrics();
+    }
+
+    function allowIntrusion() {
+        allowedCount++;
+        updateMetrics();
+    }
+
+    function renderPieChart() {
+        let ctx = document.getElementById('intrusionPieChart').getContext('2d');
+        if (pieChart) pieChart.destroy();
+        pieChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Frozen', 'Allowed'],
+                datasets: [{
+                    data: [frozenCount, allowedCount],
+                    backgroundColor: ['red', 'green']
+                }]
+            }
+        });
+    }
+</script>
+
+</body>
+</html>

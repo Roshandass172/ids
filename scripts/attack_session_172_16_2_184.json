@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2026-01-09 15:32:51",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 15:32:51",
+    "event": "ML flagged suspicious",
+    "score": 1
+  },
+  {
+    "timestamp": "2026-01-09 15:32:52",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 15:32:52",
+    "event": "ML flagged suspicious",
+    "score": 3
+  },
+  {
+    "timestamp": "2026-01-09 15:32:52",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 15:32:52",
+    "event": "ML flagged suspicious",
+    "score": 5
+  },
+  {
+    "timestamp": "2026-01-09 15:32:53",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 15:32:53",
+    "event": "ML flagged suspicious",
+    "score": 7
+  },
+  {
+    "timestamp": "2026-01-09 15:32:54",
+    "event": "Threat blocked",
+    "score": 7
+  }
+]
