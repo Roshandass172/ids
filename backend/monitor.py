@@ -1,6 +1,5 @@
 import time
 import threading
-import numpy as np
 import scapy.all as scapy
 import xgboost as xgb
 import pandas as pd
@@ -29,7 +28,7 @@ if os.path.exists(MODEL_PATH):
 else:
     sys.exit(1)
 
-escape_markdown = lambda text: "".join(f"\\{c}" if c in "_*[]()~`>#+-=|{}.!" else c for c in text)
+escape_markdown = lambda t: "".join(f"\\{c}" if c in "_*[]()~`>#+-=|{}.!" else c for c in t)
 
 ip_triggers = defaultdict(set)
 blocked_ips = set()
@@ -84,13 +83,11 @@ def extract_features(packet):
         "dst_host_srv_rerror_rate": 0
     }
 
+
 def process_packet(packet):
     global monitoring_paused
 
-    if monitoring_paused:
-        return
-
-    if not packet.haslayer(scapy.IP):
+    if monitoring_paused or not packet.haslayer(scapy.IP):
         return
 
     src_ip = packet[scapy.IP].src
@@ -105,19 +102,11 @@ def process_packet(packet):
         payload = bytes(packet[scapy.Raw].load)
 
         if b"###DOS_ATTACK###" in payload:
-            ip_triggers[src_ip].add("DoS")
             confidence = deception.update_behavior(src_ip, "dos")
             severity = decision.get_severity(confidence)
             action = decision.get_decision(confidence)
 
-            replay.log_event(
-                src_ip,
-                "DoS detected",
-                confidence=confidence,
-                severity=severity,
-                decision=action
-            )
-
+            replay.log_event(src_ip, "DoS detected", confidence, severity, action)
             logging.info(f"{severity} DoS {src_ip} {action}")
 
             if action == "BLOCK":
@@ -127,19 +116,11 @@ def process_packet(packet):
             return
 
         if b"###PORT_SCAN###" in payload:
-            ip_triggers[src_ip].add("Port Scan")
             confidence = deception.update_behavior(src_ip, "port_scan")
             severity = decision.get_severity(confidence)
             action = decision.get_decision(confidence)
 
-            replay.log_event(
-                src_ip,
-                "Port scan detected",
-                confidence=confidence,
-                severity=severity,
-                decision=action
-            )
-
+            replay.log_event(src_ip, "Port scan detected", confidence, severity, action)
             logging.info(f"{severity} PortScan {src_ip} {action}")
 
             if action == "BLOCK":
@@ -150,25 +131,15 @@ def process_packet(packet):
 
     features = extract_features(packet)
     df = pd.DataFrame([features])
-    prediction = model.predict(df)[0]
-
-    if prediction == 1:
-        ip_triggers[src_ip].add("Honeypot")
+    if model.predict(df)[0] == 1:
         confidence = deception.update_behavior(src_ip, "honeypot_hit")
         severity = decision.get_severity(confidence)
         action = decision.get_decision(confidence)
 
-        replay.log_event(
-            src_ip,
-            "ML flagged suspicious",
-            confidence=confidence,
-            severity=severity,
-            decision=action
-        )
-
+        replay.log_event(src_ip, "ML flagged", confidence, severity, action)
         logging.info(f"{severity} ML {src_ip} {action}")
 
-        msg = f"🚨 *{severity} Threat* `{src_ip}` | Decision: {action}"
+        msg = f"🚨 *{severity} Threat* `{src_ip}` | {action}"
         try:
             bot.send_message(ADMIN_CHAT_ID, escape_markdown(msg), parse_mode="MarkdownV2")
         except:
@@ -179,8 +150,31 @@ def process_packet(packet):
             replay.save_session(src_ip)
             self_heal.isolate_threat(packet)
 
+@bot.message_handler(commands=["start"])
+def start_cmd(message):
+    bot.send_message(message.chat.id, escape_markdown("🤖 A_ura IDS Backend Active"), parse_mode="MarkdownV2")
+
+@bot.message_handler(commands=["status"])
+def status_cmd(message):
+    status = "Active" if _running else "Stopped"
+    bot.send_message(message.chat.id, escape_markdown(f"IDS Status: {status}"), parse_mode="MarkdownV2")
+
+@bot.message_handler(commands=["help"])
+def help_cmd(message):
+    text = (
+        "Commands:\n"
+        "/stats\n"
+        "/logs\n"
+        "/full_logs\n"
+        "/block <ip>\n"
+        "/unblock <ip>\n"
+        "/pause\n"
+        "/resume"
+    )
+    bot.send_message(message.chat.id, escape_markdown(text), parse_mode="MarkdownV2")
+
 @bot.message_handler(commands=["logs"])
-def logs(message):
+def logs_cmd(message):
     try:
         with open(LOG_FILE) as f:
             data = f.readlines()[-10:]
@@ -189,61 +183,59 @@ def logs(message):
         bot.send_message(message.chat.id, escape_markdown("No logs available"), parse_mode="MarkdownV2")
 
 @bot.message_handler(commands=["full_logs"])
-def full_logs(message):
+def full_logs_cmd(message):
     try:
         with open(LOG_FILE) as f:
-            data = f.readlines()
+            lines = f.readlines()
         chunk = ""
-        for line in data:
-            if len(chunk) + len(line) > 3500:
+        for l in lines:
+            if len(chunk) + len(l) > 3500:
                 bot.send_message(message.chat.id, escape_markdown(chunk), parse_mode="MarkdownV2")
                 chunk = ""
-            chunk += line
+            chunk += l
         if chunk:
             bot.send_message(message.chat.id, escape_markdown(chunk), parse_mode="MarkdownV2")
     except:
         pass
 
 @bot.message_handler(commands=["block"])
-def block_ip(message):
+def block_cmd(message):
     try:
         ip = message.text.split()[1]
         blocked_ips.add(ip)
-        bot.send_message(message.chat.id, escape_markdown(f"IP `{ip}` blocked"), parse_mode="MarkdownV2")
+        bot.send_message(message.chat.id, escape_markdown(f"Blocked `{ip}`"), parse_mode="MarkdownV2")
     except:
         pass
 
 @bot.message_handler(commands=["unblock"])
-def unblock_ip(message):
+def unblock_cmd(message):
     try:
         ip = message.text.split()[1]
         blocked_ips.discard(ip)
-        bot.send_message(message.chat.id, escape_markdown(f"IP `{ip}` unblocked"), parse_mode="MarkdownV2")
+        bot.send_message(message.chat.id, escape_markdown(f"Unblocked `{ip}`"), parse_mode="MarkdownV2")
     except:
         pass
 
 @bot.message_handler(commands=["pause"])
-def pause_monitoring(message):
+def pause_cmd(message):
     global monitoring_paused
     monitoring_paused = True
     bot.send_message(message.chat.id, escape_markdown("Monitoring paused"), parse_mode="MarkdownV2")
 
 @bot.message_handler(commands=["resume"])
-def resume_monitoring(message):
+def resume_cmd(message):
     global monitoring_paused
     monitoring_paused = False
     bot.send_message(message.chat.id, escape_markdown("Monitoring resumed"), parse_mode="MarkdownV2")
 
 @bot.message_handler(commands=["stats"])
-def stats(message):
+def stats_cmd(message):
     snapshot = deception.snapshot()
-    avg_conf = round(sum(snapshot.values()) / len(snapshot), 2) if snapshot else 0.0
-
+    avg = round(sum(snapshot.values()) / len(snapshot), 2) if snapshot else 0.0
     text = (
         f"Tracked IPs: {len(snapshot)}\n"
         f"Blocked IPs: {len(blocked_ips)}\n"
-        f"Avg Confidence: {avg_conf}\n"
-        f"Monitoring: {'Paused' if monitoring_paused else 'Active'}"
+        f"Avg Confidence: {avg}"
     )
     bot.send_message(message.chat.id, escape_markdown(text), parse_mode="MarkdownV2")
 
@@ -279,3 +271,7 @@ def ids_status():
         "sniffer": _sniff_thread.is_alive() if _sniff_thread else False,
         "honeynet": True
     }
+if __name__ == "__main__":
+    start_ids()
+    while True:
+        time.sleep(1)
