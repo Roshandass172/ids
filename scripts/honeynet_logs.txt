@@ -373,3 +373,139 @@ Traceback (most recent call last):
     raise ApiTelegramException(method_name, result, result_json)
 telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
 
+2026-01-09 16:34:21,977 - \U0001f6a8 *LOW Threat* `172.16.2.184` | Decision: OBSERVE
+2026-01-09 16:34:22,714 - \U0001f6a8 *LOW Threat* `202.65.141.82` | Decision: OBSERVE
+2026-01-09 16:34:23,080 - \U0001f6a8 *LOW Threat* `172.16.2.184` | Decision: OBSERVE
+2026-01-09 16:34:23,480 - \U0001f6a8 *LOW Threat* `149.154.166.110` | Decision: OBSERVE
+2026-01-09 16:34:23,862 - \U0001f6a8 *MEDIUM Threat* `172.16.2.184` | Decision: BLOCK
+2026-01-09 16:35:24,630 - \U0001f6a8 *LOW Threat* `172.16.2.179` | Decision: OBSERVE
+2026-01-09 16:35:25,010 - \U0001f6a8 *MEDIUM Threat* `172.16.2.184` | Decision: BLOCK
+2026-01-09 16:36:25,684 - \U0001f6a8 *LOW Threat* `149.154.166.110` | Decision: OBSERVE
+2026-01-09 16:36:26,056 - \U0001f6a8 *HIGH Threat* `172.16.2.184` | Decision: BLOCK
+2026-01-09 16:37:26,775 - \U0001f6a8 *LOW Threat* `172.16.31.226` | Decision: OBSERVE
+2026-01-09 16:37:27,191 - \U0001f6a8 *LOW Threat* `172.16.1.212` | Decision: OBSERVE
+2026-01-09 16:37:27,570 - \U0001f6a8 *LOW Threat* `172.16.1.212` | Decision: OBSERVE
+2026-01-09 16:37:27,933 - \U0001f6a8 *MEDIUM Threat* `172.16.1.212` | Decision: BLOCK
+2026-01-09 16:38:28,645 - \U0001f6a8 *HIGH Threat* `172.16.2.184` | Decision: BLOCK
+2026-01-09 16:58:32,112 - \U0001f6a8 *LOW Threat* `172.16.2.184` | Decision: OBSERVE
+2026-01-09 16:58:32,825 - \U0001f6a8 *LOW Threat* `202.65.141.82` | Decision: OBSERVE
+2026-01-09 16:58:33,207 - \U0001f6a8 *LOW Threat* `172.16.2.184` | Decision: OBSERVE
+2026-01-09 16:58:33,596 - \U0001f6a8 *MEDIUM Threat* `172.16.2.184` | Decision: BLOCK
+2026-01-09 16:59:34,231 - \U0001f6a8 *LOW Threat* `149.154.166.110` | Decision: OBSERVE
+2026-01-09 17:10:30,066 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 17:10:30,717 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 17:10:31,099 - MEDIUM ML 172.16.2.184 BLOCK
+2026-01-09 17:11:31,729 - LOW ML 172.16.2.185 OBSERVE
+2026-01-09 17:11:32,092 - LOW ML 172.16.2.185 OBSERVE
+2026-01-09 17:19:46,648 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 17:19:47,319 - LOW ML 202.65.141.82 OBSERVE
+2026-01-09 17:19:47,686 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 17:19:48,075 - MEDIUM ML 172.16.2.184 BLOCK
+2026-01-09 17:22:25,438 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 17:22:26,173 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 17:22:26,554 - LOW ML 172.16.2.190 OBSERVE
+2026-01-09 17:22:26,933 - MEDIUM ML 172.16.2.184 BLOCK
+2026-01-09 17:41:39,138 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 17:41:39,845 - LOW ML 202.65.141.82 OBSERVE
+2026-01-09 17:41:40,219 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 17:41:40,603 - MEDIUM ML 172.16.2.184 BLOCK
+2026-01-09 17:41:43,494 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-09 17:41:43,497 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-09 17:41:47,578 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-09 17:41:47,585 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-09 17:41:52,401 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-09 17:41:52,403 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-09 17:41:58,733 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-09 17:41:58,734 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-09 17:43:41,687 - LOW ML 149.154.166.110 OBSERVE
+2026-01-09 17:48:43,889 - LOW ML 149.154.166.110 OBSERVE
+2026-01-09 18:14:49,288 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 18:14:49,990 - LOW ML 172.16.1.202 OBSERVE
+2026-01-09 18:14:50,372 - LOW ML 202.65.141.82 OBSERVE
+2026-01-09 18:14:50,753 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 18:14:51,122 - MEDIUM ML 172.16.2.184 BLOCK
+2026-01-09 18:29:07,179 - LOW ML 10.29.155.156 OBSERVE
+2026-01-09 18:29:08,422 - LOW ML 10.29.155.156 OBSERVE
+2026-01-09 18:29:08,981 - LOW ML 10.29.155.170 OBSERVE
+2026-01-09 18:29:09,439 - LOW ML 163.70.140.60 OBSERVE
+2026-01-09 18:29:10,062 - LOW ML 10.29.155.170 OBSERVE
+2026-01-09 18:29:10,494 - LOW ML 20.118.198.34 OBSERVE
+2026-01-09 18:29:10,906 - LOW ML 149.154.166.110 OBSERVE
+2026-01-09 18:29:11,375 - LOW ML 149.154.166.110 OBSERVE
+2026-01-09 18:29:11,808 - MEDIUM ML 10.29.155.156 BLOCK

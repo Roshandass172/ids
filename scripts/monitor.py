@@ -12,6 +12,8 @@ import telebot
 import honeynet
 import deception_engine as deception
 import replay_logger as replay
+import decision_engine as decision
+from collections import defaultdict
 
 BOT_TOKEN = "7263544374:AAGDBQCjAPWruUpSDHlfUNP9nTdefyA4xnU"
 ADMIN_CHAT_ID = 6838941898
@@ -30,6 +32,10 @@ else:
     sys.exit(1)
 
 escape_markdown = lambda text: "".join(f"\\{char}" if char in "_*[]()~`>#+-=|{}.!" else char for char in text)
+
+ip_triggers = defaultdict(set)
+blocked_ips = set()
+monitoring_paused = False
 
 def extract_features(packet):
     return {
@@ -62,39 +68,57 @@ def extract_features(packet):
     }
 
 def process_packet(packet):
+    global monitoring_paused
+
     print(f"📡 Captured Packet: {packet.summary()}")
+
+    if monitoring_paused:
+        return
 
     if not packet.haslayer(scapy.IP):
         return
 
     src_ip = packet[scapy.IP].src
+
+    if src_ip in blocked_ips:
+        self_heal.isolate_threat(packet)
+        return
+
     replay.log_event(src_ip, "Packet captured")
 
     if packet.haslayer(scapy.Raw):
         payload = bytes(packet[scapy.Raw].load)
 
         if b"###DOS_ATTACK###" in payload:
+            ip_triggers[src_ip].add("DoS")
             score = deception.update_behavior(src_ip, "dos")
-            replay.log_event(src_ip, "DoS detected", score)
+            severity = decision.get_severity(score)
+            action = decision.get_decision(score)
 
-            if deception.should_block(src_ip):
+            replay.log_event(src_ip, f"DoS detected | Severity: {severity} | Decision: {action}", score)
+            logging.info(f"{severity} DoS {src_ip} {action}")
+
+            if action == "BLOCK":
+                blocked_ips.add(src_ip)
                 replay.log_event(src_ip, "Threat blocked", score)
                 replay.save_session(src_ip)
                 self_heal.isolate_threat(packet)
-            else:
-                replay.log_event(src_ip, "Observed via honeynet", score)
             return
 
         elif b"###PORT_SCAN###" in payload:
+            ip_triggers[src_ip].add("Port Scan")
             score = deception.update_behavior(src_ip, "port_scan")
-            replay.log_event(src_ip, "Port scan detected", score)
+            severity = decision.get_severity(score)
+            action = decision.get_decision(score)
 
-            if deception.should_block(src_ip):
+            replay.log_event(src_ip, f"Port scan detected | Severity: {severity} | Decision: {action}", score)
+            logging.info(f"{severity} PortScan {src_ip} {action}")
+
+            if action == "BLOCK":
+                blocked_ips.add(src_ip)
                 replay.log_event(src_ip, "Threat blocked", score)
                 replay.save_session(src_ip)
                 self_heal.isolate_threat(packet)
-            else:
-                replay.log_event(src_ip, "Observed via honeynet", score)
             return
 
     features = extract_features(packet)
@@ -102,33 +126,108 @@ def process_packet(packet):
     prediction = model.predict(df)[0]
 
     if prediction == 1:
+        ip_triggers[src_ip].add("Honeypot Interaction")
         score = deception.update_behavior(src_ip, "honeypot_hit")
-        replay.log_event(src_ip, "ML flagged suspicious", score)
+        severity = decision.get_severity(score)
+        action = decision.get_decision(score)
 
-        alert_msg = f"🚨 *Suspicious Activity Observed* `{src_ip}`"
-        logging.info(alert_msg)
+        replay.log_event(src_ip, f"ML flagged | Severity: {severity} | Decision: {action}", score)
+        logging.info(f"{severity} ML {src_ip} {action}")
 
+        alert_msg = f"🚨 *{severity} Threat* `{src_ip}` | Decision: {action}"
         try:
             bot.send_message(ADMIN_CHAT_ID, escape_markdown(alert_msg), parse_mode="MarkdownV2")
         except Exception:
             pass
 
-        if deception.should_block(src_ip):
+        if action == "BLOCK":
+            blocked_ips.add(src_ip)
             replay.log_event(src_ip, "Threat blocked", score)
             replay.save_session(src_ip)
             self_heal.isolate_threat(packet)
 
+@bot.message_handler(commands=["logs"])
+def logs(message):
+    try:
+        with open(LOG_FILE, "r") as f:
+            lines = f.readlines()[-10:]
+        if not lines:
+            bot.send_message(message.chat.id, escape_markdown("No logs available"), parse_mode="MarkdownV2")
+            return
+        bot.send_message(message.chat.id, escape_markdown("Recent Logs:\n" + "".join(lines)), parse_mode="MarkdownV2")
+    except Exception as e:
+        bot.send_message(message.chat.id, escape_markdown(str(e)), parse_mode="MarkdownV2")
+
+@bot.message_handler(commands=["full_logs"])
+def full_logs(message):
+    try:
+        with open(LOG_FILE, "r") as f:
+            logs = f.readlines()
+        if not logs:
+            bot.send_message(message.chat.id, escape_markdown("No logs available"), parse_mode="MarkdownV2")
+            return
+        chunk = ""
+        for line in logs:
+            if len(chunk) + len(line) > 3500:
+                bot.send_message(message.chat.id, escape_markdown(chunk), parse_mode="MarkdownV2")
+                chunk = ""
+            chunk += line
+        if chunk:
+            bot.send_message(message.chat.id, escape_markdown(chunk), parse_mode="MarkdownV2")
+    except Exception as e:
+        bot.send_message(message.chat.id, escape_markdown(str(e)), parse_mode="MarkdownV2")
+
+@bot.message_handler(commands=["block"])
+def block_ip(message):
+    try:
+        ip = message.text.split()[1]
+        blocked_ips.add(ip)
+        bot.send_message(message.chat.id, escape_markdown(f"IP `{ip}` blocked"), parse_mode="MarkdownV2")
+    except IndexError:
+        bot.send_message(message.chat.id, escape_markdown("Usage: /block <ip>"), parse_mode="MarkdownV2")
+
+@bot.message_handler(commands=["unblock"])
+def unblock_ip(message):
+    try:
+        ip = message.text.split()[1]
+        blocked_ips.discard(ip)
+        bot.send_message(message.chat.id, escape_markdown(f"IP `{ip}` unblocked"), parse_mode="MarkdownV2")
+    except IndexError:
+        bot.send_message(message.chat.id, escape_markdown("Usage: /unblock <ip>"), parse_mode="MarkdownV2")
+
+@bot.message_handler(commands=["pause"])
+def pause_monitoring(message):
+    global monitoring_paused
+    monitoring_paused = True
+    bot.send_message(message.chat.id, escape_markdown("Monitoring paused"), parse_mode="MarkdownV2")
+
+@bot.message_handler(commands=["resume"])
+def resume_monitoring(message):
+    global monitoring_paused
+    monitoring_paused = False
+    bot.send_message(message.chat.id, escape_markdown("Monitoring resumed"), parse_mode="MarkdownV2")
+
+@bot.message_handler(commands=["stats"])
+def stats(message):
+    text = (
+        f"System Stats\n"
+        f"Tracked IPs: {len(deception.ip_scores)}\n"
+        f"Blocked IPs: {len(blocked_ips)}\n"
+        f"Monitoring: {'Paused' if monitoring_paused else 'Active'}"
+    )
+    bot.send_message(message.chat.id, escape_markdown(text), parse_mode="MarkdownV2")
+
 @bot.message_handler(commands=["start"])
 def start(message):
-    bot.send_message(message.chat.id, escape_markdown("🤖 *A_ura_bot Activated!*"), parse_mode="MarkdownV2")
+    bot.send_message(message.chat.id, escape_markdown("A_ura_bot Activated"), parse_mode="MarkdownV2")
 
 @bot.message_handler(commands=["status"])
 def status(message):
-    bot.send_message(message.chat.id, escape_markdown("✅ *IDS System is Running!*"), parse_mode="MarkdownV2")
+    bot.send_message(message.chat.id, escape_markdown("IDS System is Running"), parse_mode="MarkdownV2")
 
 @bot.message_handler(commands=["help"])
 def help(message):
-    bot.send_message(message.chat.id, escape_markdown("Use /status to check system health"), parse_mode="MarkdownV2")
+    bot.send_message(message.chat.id, escape_markdown("Commands: /stats /logs /full_logs /block /unblock /pause /resume"), parse_mode="MarkdownV2")
 
 def start_bot():
     print("🤖 A_ura_bot is now active!")
@@ -136,7 +235,7 @@ def start_bot():
 
 def start_sniffer():
     print("🔍 Monitoring Network Traffic in Real Time...")
-    scapy.sniff(filter="ip", prn=process_packet, store=0)
+    scapy.sniff(iface = "Wi-Fi" ,filter="ip", prn=process_packet, store=0)
 
 honeynet.start_honeynet()
 

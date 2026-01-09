@@ -16,7 +16,7 @@ import time
 # -------------------------------
 
 # Score required to confirm malicious intent
-BLOCK_THRESHOLD = 7
+BLOCK_THRESHOLD = 4
 
 # Time window (seconds) to consider repeated behavior
 REPEAT_WINDOW = 10

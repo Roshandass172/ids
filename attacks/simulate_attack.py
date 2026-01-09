@@ -4,7 +4,7 @@ import time
 from datetime import datetime
 
 
-target_ip = "172.16.2.184"
+target_ip =  "10.29.155.156"
 attacker_ip = "192.168.143.99"
 
 print(f"\n🚨 ATTACK SCRIPT LAUNCHED AS: {attacker_ip} -> TARGET: {target_ip}\n")
