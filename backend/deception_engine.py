@@ -1,120 +1,65 @@
-# deception_engine.py
-"""
-Deception Engine
-----------------
-Tracks attacker behavior over time and decides whether to
-continue observation (honeynet) or escalate to blocking.
-
-This module is STATEFUL and INTENT-AWARE.
-"""
-
 from collections import defaultdict
 import time
+import math
 
-# -------------------------------
-# Configuration
-# -------------------------------
-
-# Score required to confirm malicious intent
-BLOCK_THRESHOLD = 7
-
-# Time window (seconds) to consider repeated behavior
+CONFIRMATION_CONFIDENCE = 0.85
+DECAY_HALF_LIFE = 60
 REPEAT_WINDOW = 10
 
-# -------------------------------
-# Internal State
-# -------------------------------
+confidence = defaultdict(float)
+last_update = defaultdict(float)
+behavior_history = defaultdict(lambda: defaultdict(int))
 
-# Stores cumulative score per IP
-ip_scores = defaultdict(int)
-
-# Stores last behavior timestamp per IP
-last_seen = defaultdict(float)
-
-# Stores how many times behavior was seen recently
-behavior_count = defaultdict(lambda: defaultdict(int))
-
-
-# -------------------------------
-# Scoring Rules
-# -------------------------------
-
-BEHAVIOR_SCORES = {
-    "honeypot_hit": 1,
-    "repeat_honeypot_hit": 2,
-    "port_scan": 3,
-    "dos": 5
+BEHAVIOR_EVIDENCE = {
+    "honeypot_hit": 0.10,
+    "repeat_honeypot_hit": 0.20,
+    "port_scan": 0.35,
+    "dos": 0.55
 }
 
-
-# -------------------------------
-# Core Functions
-# -------------------------------
-
-def update_behavior(ip: str, behavior: str) -> int:
-    """
-    Update behavior score for a source IP.
-
-    Args:
-        ip (str): Source IP address
-        behavior (str): Type of behavior observed
-
-    Returns:
-        int: Current cumulative deception score for the IP
-    """
-
+def _decay(ip: str):
     now = time.time()
+    last = last_update[ip]
+    if last == 0:
+        return
 
-    # Check if behavior is repeated in short time
-    if now - last_seen[ip] <= REPEAT_WINDOW:
-        behavior_count[ip][behavior] += 1
+    elapsed = now - last
+    decay_factor = 0.5 ** (elapsed / DECAY_HALF_LIFE)
+    confidence[ip] *= decay_factor
+
+def update_behavior(ip: str, behavior: str) -> float:
+    now = time.time()
+    _decay(ip)
+
+    if now - last_update[ip] <= REPEAT_WINDOW:
+        behavior_history[ip][behavior] += 1
     else:
-        behavior_count[ip][behavior] = 1
+        behavior_history[ip][behavior] = 1
 
-    last_seen[ip] = now
+    last_update[ip] = now
 
-    # Determine score increment
-    if behavior_count[ip][behavior] > 1 and behavior == "honeypot_hit":
-        score = BEHAVIOR_SCORES["repeat_honeypot_hit"]
+    if behavior_history[ip][behavior] > 1 and behavior == "honeypot_hit":
+        evidence = BEHAVIOR_EVIDENCE["repeat_honeypot_hit"]
     else:
-        score = BEHAVIOR_SCORES.get(behavior, 0)
+        evidence = BEHAVIOR_EVIDENCE.get(behavior, 0.0)
 
-    ip_scores[ip] += score
+    prior = confidence[ip]
+    confidence[ip] = 1 - (1 - prior) * (1 - evidence)
 
-    return ip_scores[ip]
-
+    return round(confidence[ip], 3)
 
 def should_block(ip: str) -> bool:
-    """
-    Decide whether the IP should be blocked.
+    _decay(ip)
+    return confidence[ip] >= CONFIRMATION_CONFIDENCE
 
-    Args:
-        ip (str): Source IP address
-
-    Returns:
-        bool: True if block threshold exceeded
-    """
-    return ip_scores[ip] >= BLOCK_THRESHOLD
-
-
-def get_score(ip: str) -> int:
-    """
-    Get current deception score of an IP.
-    """
-    return ip_scores[ip]
-
+def get_score(ip: str) -> float:
+    _decay(ip)
+    return round(confidence[ip], 3)
 
 def reset_ip(ip: str):
-    """
-    Reset tracking for an IP (optional use).
-    """
-    ip_scores.pop(ip, None)
-    last_seen.pop(ip, None)
-    behavior_count.pop(ip, None)
-
+    confidence.pop(ip, None)
+    last_update.pop(ip, None)
+    behavior_history.pop(ip, None)
 
 def snapshot():
-    """
-    Get full snapshot of tracked IPs (for debugging / dashboard).
-    """
-    return dict(ip_scores)
+    return {ip: round(score, 3) for ip, score in confidence.items()}

@@ -1,32 +1,142 @@
 [
   {
-    "timestamp": "2026-01-10 02:17:16",
+    "timestamp": "2026-01-10 02:45:21",
     "event": "Packet captured",
-    "score": null
+    "confidence": null,
+    "severity": null,
+    "decision": null
   },
   {
-    "timestamp": "2026-01-10 02:17:16",
-    "event": "ML | LOW | OBSERVE",
-    "score": 1
+    "timestamp": "2026-01-10 02:45:21",
+    "event": "ML flagged suspicious",
+    "confidence": 0.1,
+    "severity": "LOW",
+    "decision": "OBSERVE"
   },
   {
-    "timestamp": "2026-01-10 02:17:18",
+    "timestamp": "2026-01-10 02:45:22",
     "event": "Packet captured",
-    "score": null
+    "confidence": null,
+    "severity": null,
+    "decision": null
   },
   {
-    "timestamp": "2026-01-10 02:17:18",
-    "event": "ML | LOW | OBSERVE",
-    "score": 3
+    "timestamp": "2026-01-10 02:45:22",
+    "event": "ML flagged suspicious",
+    "confidence": 0.279,
+    "severity": "LOW",
+    "decision": "OBSERVE"
   },
   {
-    "timestamp": "2026-01-10 02:17:18",
+    "timestamp": "2026-01-10 02:45:22",
     "event": "Packet captured",
-    "score": null
+    "confidence": null,
+    "severity": null,
+    "decision": null
   },
   {
-    "timestamp": "2026-01-10 02:17:18",
-    "event": "ML | MEDIUM | BLOCK",
-    "score": 5
+    "timestamp": "2026-01-10 02:45:22",
+    "event": "ML flagged suspicious",
+    "confidence": 0.422,
+    "severity": "MEDIUM",
+    "decision": "ALERT"
+  },
+  {
+    "timestamp": "2026-01-10 02:45:23",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null
+  },
+  {
+    "timestamp": "2026-01-10 02:45:23",
+    "event": "ML flagged suspicious",
+    "confidence": 0.535,
+    "severity": "MEDIUM",
+    "decision": "ALERT"
+  },
+  {
+    "timestamp": "2026-01-10 02:45:23",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null
+  },
+  {
+    "timestamp": "2026-01-10 02:45:23",
+    "event": "ML flagged suspicious",
+    "confidence": 0.625,
+    "severity": "MEDIUM",
+    "decision": "ALERT"
+  },
+  {
+    "timestamp": "2026-01-10 02:45:24",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null
+  },
+  {
+    "timestamp": "2026-01-10 02:45:24",
+    "event": "ML flagged suspicious",
+    "confidence": 0.698,
+    "severity": "HIGH",
+    "decision": "ALERT"
+  },
+  {
+    "timestamp": "2026-01-10 02:45:24",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null
+  },
+  {
+    "timestamp": "2026-01-10 02:45:24",
+    "event": "ML flagged suspicious",
+    "confidence": 0.754,
+    "severity": "HIGH",
+    "decision": "ALERT"
+  },
+  {
+    "timestamp": "2026-01-10 02:45:25",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null
+  },
+  {
+    "timestamp": "2026-01-10 02:45:25",
+    "event": "ML flagged suspicious",
+    "confidence": 0.798,
+    "severity": "HIGH",
+    "decision": "ALERT"
+  },
+  {
+    "timestamp": "2026-01-10 02:45:26",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null
+  },
+  {
+    "timestamp": "2026-01-10 02:45:26",
+    "event": "ML flagged suspicious",
+    "confidence": 0.833,
+    "severity": "HIGH",
+    "decision": "ALERT"
+  },
+  {
+    "timestamp": "2026-01-10 02:45:26",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null
+  },
+  {
+    "timestamp": "2026-01-10 02:45:26",
+    "event": "ML flagged suspicious",
+    "confidence": 0.864,
+    "severity": "CRITICAL",
+    "decision": "BLOCK"
   }
 ]

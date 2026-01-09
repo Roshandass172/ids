@@ -106,10 +106,18 @@ def process_packet(packet):
 
         if b"###DOS_ATTACK###" in payload:
             ip_triggers[src_ip].add("DoS")
-            score = deception.update_behavior(src_ip, "dos")
-            severity = decision.get_severity(score)
-            action = decision.get_decision(score)
-            replay.log_event(src_ip, f"DoS | {severity} | {action}", score)
+            confidence = deception.update_behavior(src_ip, "dos")
+            severity = decision.get_severity(confidence)
+            action = decision.get_decision(confidence)
+
+            replay.log_event(
+                src_ip,
+                "DoS detected",
+                confidence=confidence,
+                severity=severity,
+                decision=action
+            )
+
             logging.info(f"{severity} DoS {src_ip} {action}")
 
             if action == "BLOCK":
@@ -120,10 +128,18 @@ def process_packet(packet):
 
         if b"###PORT_SCAN###" in payload:
             ip_triggers[src_ip].add("Port Scan")
-            score = deception.update_behavior(src_ip, "port_scan")
-            severity = decision.get_severity(score)
-            action = decision.get_decision(score)
-            replay.log_event(src_ip, f"PortScan | {severity} | {action}", score)
+            confidence = deception.update_behavior(src_ip, "port_scan")
+            severity = decision.get_severity(confidence)
+            action = decision.get_decision(confidence)
+
+            replay.log_event(
+                src_ip,
+                "Port scan detected",
+                confidence=confidence,
+                severity=severity,
+                decision=action
+            )
+
             logging.info(f"{severity} PortScan {src_ip} {action}")
 
             if action == "BLOCK":
@@ -138,10 +154,18 @@ def process_packet(packet):
 
     if prediction == 1:
         ip_triggers[src_ip].add("Honeypot")
-        score = deception.update_behavior(src_ip, "honeypot_hit")
-        severity = decision.get_severity(score)
-        action = decision.get_decision(score)
-        replay.log_event(src_ip, f"ML | {severity} | {action}", score)
+        confidence = deception.update_behavior(src_ip, "honeypot_hit")
+        severity = decision.get_severity(confidence)
+        action = decision.get_decision(confidence)
+
+        replay.log_event(
+            src_ip,
+            "ML flagged suspicious",
+            confidence=confidence,
+            severity=severity,
+            decision=action
+        )
+
         logging.info(f"{severity} ML {src_ip} {action}")
 
         msg = f"🚨 *{severity} Threat* `{src_ip}` | Decision: {action}"
@@ -212,9 +236,13 @@ def resume_monitoring(message):
 
 @bot.message_handler(commands=["stats"])
 def stats(message):
+    snapshot = deception.snapshot()
+    avg_conf = round(sum(snapshot.values()) / len(snapshot), 2) if snapshot else 0.0
+
     text = (
-        f"Tracked IPs: {len(deception.ip_scores)}\n"
+        f"Tracked IPs: {len(snapshot)}\n"
         f"Blocked IPs: {len(blocked_ips)}\n"
+        f"Avg Confidence: {avg_conf}\n"
         f"Monitoring: {'Paused' if monitoring_paused else 'Active'}"
     )
     bot.send_message(message.chat.id, escape_markdown(text), parse_mode="MarkdownV2")

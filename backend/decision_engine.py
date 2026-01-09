@@ -1,13 +1,16 @@
-def get_severity(score):
-    if score >= 7:
+def get_severity(confidence):
+    if confidence >= 0.85:
+        return "CRITICAL"
+    if confidence >= 0.65:
         return "HIGH"
-    if score >= 4:
+    if confidence >= 0.35:
         return "MEDIUM"
     return "LOW"
 
-def get_decision(score):
-    if score >= 5:
+
+def get_decision(confidence):
+    if confidence >= 0.85:
         return "BLOCK"
-    if score >= 4:
+    if confidence >= 0.35:
         return "ALERT"
     return "OBSERVE"
