@@ -1,0 +1,154 @@
+2026-01-09 17:03:54,829 - \U0001f680 FastAPI server started
+2026-01-09 17:09:14,265 - \U0001f6d1 FastAPI server shutting down
+2026-01-09 17:09:18,570 - \U0001f680 FastAPI server started
+2026-01-09 17:12:12,133 - \U0001f6d1 FastAPI server shutting down
+2026-01-09 17:18:37,905 - \U0001f680 FastAPI server started
+2026-01-09 17:19:57,927 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-09 17:19:57,927 - Exception traceback:
+Traceback (most recent call last):
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-09 17:31:31,278 - \U0001f680 FastAPI server started
+2026-01-09 17:31:32,896 - \U0001f6d1 FastAPI server shutting down
+2026-01-09 17:34:51,461 - \U0001f680 FastAPI server started
+2026-01-09 17:35:02,531 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 17:35:03,225 - \U0001f6a8 Suspicious activity from `202.65.141.82`
+2026-01-09 17:35:03,684 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 17:35:04,036 - \U0001f6a8 Suspicious activity from `149.154.166.110`
+2026-01-09 17:35:04,376 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 17:35:04,761 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 17:36:05,269 - \U0001f6a8 Suspicious activity from `149.154.166.110`
+2026-01-09 17:36:05,650 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 17:37:06,139 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 17:38:06,738 - \U0001f6a8 Suspicious activity from `104.18.33.150`
+2026-01-09 17:38:07,099 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 17:39:07,634 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 17:40:08,157 - \U0001f6a8 Suspicious activity from `104.18.33.150`
+2026-01-09 17:40:08,516 - \U0001f6a8 Suspicious activity from `172.16.2.152`
+2026-01-09 17:40:08,976 - \U0001f6a8 Suspicious activity from `172.16.2.152`
+2026-01-09 17:40:09,336 - \U0001f6a8 Suspicious activity from `104.18.33.150`
+2026-01-09 17:40:09,691 - \U0001f6a8 Suspicious activity from `172.16.2.152`
+2026-01-09 17:40:10,046 - \U0001f6a8 Suspicious activity from `172.16.171.30`
+2026-01-09 17:40:10,397 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 17:41:10,911 - \U0001f6a8 Suspicious activity from `162.159.130.53`
+2026-01-09 17:41:11,296 - \U0001f6a8 Suspicious activity from `162.159.130.53`
+2026-01-09 17:41:11,657 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 17:41:50,367 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-09 17:41:50,367 - Exception traceback:
+Traceback (most recent call last):
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-09 17:41:54,210 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-09 17:41:54,210 - Exception traceback:
+Traceback (most recent call last):
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-09 17:41:58,536 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-09 17:41:58,536 - Exception traceback:
+Traceback (most recent call last):
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-09 17:42:03,866 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-09 17:42:03,866 - Exception traceback:
+Traceback (most recent call last):
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "d:\VS_programs\diddy\.venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-09 17:42:10,470 - \U0001f6d1 FastAPI server shutting down
+2026-01-09 18:34:49,356 - \U0001f680 FastAPI server started
+2026-01-09 18:34:52,505 - \U0001f6d1 FastAPI server shutting down
+2026-01-09 18:34:56,851 - \U0001f680 FastAPI server started
+2026-01-09 18:35:05,906 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 18:35:06,690 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 18:35:07,069 - \U0001f6a8 Suspicious activity from `202.65.141.82`
+2026-01-09 18:35:07,434 - \U0001f6a8 Suspicious activity from `202.65.141.82`
+2026-01-09 18:35:07,803 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 18:35:08,250 - \U0001f6a8 Suspicious activity from `104.18.33.150`
+2026-01-09 18:35:08,629 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 18:36:09,490 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 18:37:09,993 - \U0001f6a8 Suspicious activity from `104.18.33.150`
+2026-01-09 18:37:10,358 - \U0001f6a8 Suspicious activity from `65.1.125.235`
+2026-01-09 18:37:10,732 - \U0001f6a8 Suspicious activity from `104.18.33.150`
+2026-01-09 18:37:11,094 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 18:38:11,625 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 18:39:12,150 - \U0001f6a8 Suspicious activity from `172.16.3.49`
+2026-01-09 18:39:25,539 - \U0001f6d1 FastAPI server shutting down
