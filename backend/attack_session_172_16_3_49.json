@@ -1,0 +1,107 @@
+[
+  {
+    "timestamp": "2026-01-09 18:35:05",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 18:35:05",
+    "event": "ML flagged suspicious",
+    "score": 1
+  },
+  {
+    "timestamp": "2026-01-09 18:35:06",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 18:35:06",
+    "event": "ML flagged suspicious",
+    "score": 3
+  },
+  {
+    "timestamp": "2026-01-09 18:35:07",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 18:35:07",
+    "event": "ML flagged suspicious",
+    "score": 5
+  },
+  {
+    "timestamp": "2026-01-09 18:35:08",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 18:35:08",
+    "event": "ML flagged suspicious",
+    "score": 7
+  },
+  {
+    "timestamp": "2026-01-09 18:35:09",
+    "event": "Blocked",
+    "score": 7
+  },
+  {
+    "timestamp": "2026-01-09 18:36:09",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 18:36:09",
+    "event": "ML flagged suspicious",
+    "score": 8
+  },
+  {
+    "timestamp": "2026-01-09 18:36:09",
+    "event": "Blocked",
+    "score": 8
+  },
+  {
+    "timestamp": "2026-01-09 18:37:11",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 18:37:11",
+    "event": "ML flagged suspicious",
+    "score": 9
+  },
+  {
+    "timestamp": "2026-01-09 18:37:11",
+    "event": "Blocked",
+    "score": 9
+  },
+  {
+    "timestamp": "2026-01-09 18:38:11",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 18:38:11",
+    "event": "ML flagged suspicious",
+    "score": 10
+  },
+  {
+    "timestamp": "2026-01-09 18:38:11",
+    "event": "Blocked",
+    "score": 10
+  },
+  {
+    "timestamp": "2026-01-09 18:39:12",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-09 18:39:12",
+    "event": "ML flagged suspicious",
+    "score": 11
+  },
+  {
+    "timestamp": "2026-01-09 18:39:12",
+    "event": "Blocked",
+    "score": 11
+  }
+]
