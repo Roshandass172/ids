@@ -235,7 +235,7 @@ def start_bot():
 
 def start_sniffer():
     print("🔍 Monitoring Network Traffic in Real Time...")
-    scapy.sniff(iface = "Wi-Fi" ,filter="ip", prn=process_packet, store=0)
+    scapy.sniff(filter="ip", prn=process_packet, store=0)
 
 honeynet.start_honeynet()
 

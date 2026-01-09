@@ -1,0 +1,32 @@
+[
+  {
+    "timestamp": "2026-01-10 02:17:16",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-10 02:17:16",
+    "event": "ML | LOW | OBSERVE",
+    "score": 1
+  },
+  {
+    "timestamp": "2026-01-10 02:17:18",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-10 02:17:18",
+    "event": "ML | LOW | OBSERVE",
+    "score": 3
+  },
+  {
+    "timestamp": "2026-01-10 02:17:18",
+    "event": "Packet captured",
+    "score": null
+  },
+  {
+    "timestamp": "2026-01-10 02:17:18",
+    "event": "ML | MEDIUM | BLOCK",
+    "score": 5
+  }
+]

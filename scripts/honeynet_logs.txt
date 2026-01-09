@@ -509,3 +509,581 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 2026-01-09 18:29:10,906 - LOW ML 149.154.166.110 OBSERVE
 2026-01-09 18:29:11,375 - LOW ML 149.154.166.110 OBSERVE
 2026-01-09 18:29:11,808 - MEDIUM ML 10.29.155.156 BLOCK
+2026-01-09 18:59:25,543 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 18:59:26,275 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 18:59:26,676 - MEDIUM ML 172.16.2.184 BLOCK
+2026-01-09 19:06:18,277 - LOW ML 172.16.107.116 OBSERVE
+2026-01-09 19:06:18,963 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 19:06:19,382 - LOW ML 149.154.166.110 OBSERVE
+2026-01-09 19:06:19,770 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 19:06:20,141 - MEDIUM ML 172.16.2.184 BLOCK
+2026-01-09 20:17:54,067 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 20:17:54,815 - LOW ML 172.16.2.184 OBSERVE
+2026-01-09 20:17:55,250 - LOW ML 202.65.141.82 OBSERVE
+2026-01-09 20:17:55,848 - LOW ML 172.16.112.135 OBSERVE
+2026-01-09 20:17:56,220 - MEDIUM ML 172.16.2.184 BLOCK
+2026-01-10 01:45:40,306 - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2026-01-10 01:45:40,380 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 204, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2026-01-10 01:45:43,399 - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2026-01-10 01:45:43,402 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 204, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2026-01-10 01:45:46,423 - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2026-01-10 01:45:46,424 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 204, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2026-01-10 01:45:49,447 - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2026-01-10 01:45:49,449 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 204, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2026-01-10 01:45:52,464 - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2026-01-10 01:45:52,466 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 204, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2026-01-10 01:45:55,489 - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2026-01-10 01:45:55,491 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 204, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2026-01-10 01:45:58,498 - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2026-01-10 01:45:58,498 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 204, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2026-01-10 01:46:01,519 - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2026-01-10 01:46:01,525 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 204, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2026-01-10 01:46:04,556 - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+2026-01-10 01:46:07,147 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\socket.py", line 954, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\retry.py", line 535, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 204, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 677, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.telegram.org', port=443): Max retries exceeded with url: /bot7263544374:***********************************/getMe (Caused by NameResolutionError("HTTPSConnection(host='api.telegram.org', port=443): Failed to resolve 'api.telegram.org' ([Errno 11001] getaddrinfo failed)"))
+
+2026-01-10 02:01:21,607 - LOW ML 172.16.0.237 OBSERVE
+2026-01-10 02:01:22,378 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 02:01:22,769 - LOW ML 172.16.3.11 OBSERVE
+2026-01-10 02:01:23,154 - LOW ML 202.65.141.82 OBSERVE
+2026-01-10 02:01:23,524 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 02:01:23,911 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 02:01:24,408 - MEDIUM ML 172.16.2.184 BLOCK

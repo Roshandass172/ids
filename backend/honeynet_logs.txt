@@ -152,3 +152,19 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 2026-01-09 18:38:11,625 - \U0001f6a8 Suspicious activity from `172.16.3.49`
 2026-01-09 18:39:12,150 - \U0001f6a8 Suspicious activity from `172.16.3.49`
 2026-01-09 18:39:25,539 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 02:09:53,679 - \U0001f680 FastAPI server started
+2026-01-10 02:10:22,713 - \U0001f6a8 Suspicious Activity Observed 172.16.2.184
+2026-01-10 02:10:23,447 - \U0001f6a8 Suspicious Activity Observed 202.65.141.82
+2026-01-10 02:10:23,812 - \U0001f6a8 Suspicious Activity Observed 172.16.2.184
+2026-01-10 02:10:24,167 - \U0001f6a8 Suspicious Activity Observed 149.154.166.110
+2026-01-10 02:10:24,532 - \U0001f6a8 Suspicious Activity Observed 172.16.2.184
+2026-01-10 02:10:24,897 - \U0001f6a8 Suspicious Activity Observed 172.16.2.184
+2026-01-10 02:10:46,840 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 02:17:10,828 - \U0001f680 FastAPI server started
+2026-01-10 02:17:16,158 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 02:17:16,914 - LOW ML 202.65.141.82 OBSERVE
+2026-01-10 02:17:17,286 - LOW ML 162.159.130.53 OBSERVE
+2026-01-10 02:17:17,656 - LOW ML 162.159.130.53 OBSERVE
+2026-01-10 02:17:18,042 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 02:17:18,445 - MEDIUM ML 172.16.2.184 BLOCK
+2026-01-10 02:17:55,027 - \U0001f6d1 FastAPI server shutting down
