@@ -620,3 +620,1040 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 2026-01-10 03:25:51,207 - HIGH ML 172.16.2.184 ALERT
 2026-01-10 03:25:51,567 - CRITICAL ML 172.16.2.184 BLOCK
 2026-01-10 03:26:33,772 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 05:03:37,543 - \U0001f680 FastAPI server started
+2026-01-10 05:03:38,806 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 05:03:39,500 - LOW ML 172.16.1.201 OBSERVE
+2026-01-10 05:03:39,891 - LOW ML 172.16.5.223 OBSERVE
+2026-01-10 05:03:40,271 - LOW ML 202.65.141.82 OBSERVE
+2026-01-10 05:03:40,644 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 05:03:41,014 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 05:03:41,416 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:03:41,840 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:03:42,240 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 05:03:42,631 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:03:43,012 - LOW ML 172.16.3.7 OBSERVE
+2026-01-10 05:03:43,307 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 05:03:43,313 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 05:03:43,430 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:03:43,821 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:03:44,206 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:03:44,580 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:03:44,958 - LOW ML 172.16.3.7 OBSERVE
+2026-01-10 05:03:45,329 - MEDIUM ML 172.16.3.7 ALERT
+2026-01-10 05:03:45,697 - MEDIUM ML 172.16.3.7 ALERT
+2026-01-10 05:03:46,063 - LOW ML 172.16.99.254 OBSERVE
+2026-01-10 05:03:46,433 - LOW ML 172.16.3.178 OBSERVE
+2026-01-10 05:03:46,789 - LOW ML 172.16.112.71 OBSERVE
+2026-01-10 05:03:47,152 - LOW ML 172.16.1.156 OBSERVE
+2026-01-10 05:03:47,402 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 05:03:47,404 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 05:03:47,514 - LOW ML 172.16.2.103 OBSERVE
+2026-01-10 05:03:47,883 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:03:48,264 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:03:48,630 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:03:48,995 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:03:49,360 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:03:49,726 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:03:50,092 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:03:50,476 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:03:50,855 - CRITICAL ML 172.16.2.184 BLOCK
+2026-01-10 05:03:52,237 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 05:03:54,190 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 05:03:55,420 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 05:04:18,300 - \U0001f680 FastAPI server started
+2026-01-10 05:04:21,971 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 05:04:22,722 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 05:04:23,107 - LOW ML 8.8.8.8 OBSERVE
+2026-01-10 05:04:23,499 - LOW ML 8.8.8.8 OBSERVE
+2026-01-10 05:04:23,894 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:04:24,276 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 05:04:24,653 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:04:25,043 - MEDIUM ML 8.8.8.8 ALERT
+2026-01-10 05:04:25,421 - LOW ML 172.16.3.178 OBSERVE
+2026-01-10 05:04:25,803 - MEDIUM ML 8.8.8.8 ALERT
+2026-01-10 05:04:26,173 - MEDIUM ML 8.8.8.8 ALERT
+2026-01-10 05:04:26,551 - HIGH ML 8.8.8.8 ALERT
+2026-01-10 05:04:26,976 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:04:27,365 - HIGH ML 8.8.8.8 ALERT
+2026-01-10 05:04:27,753 - HIGH ML 8.8.8.8 ALERT
+2026-01-10 05:04:28,139 - LOW ML 172.16.3.9 OBSERVE
+2026-01-10 05:04:28,519 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:04:28,899 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:04:29,285 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:04:29,671 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 05:04:30,043 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:04:30,428 - LOW ML 142.250.207.131 OBSERVE
+2026-01-10 05:04:30,805 - CRITICAL ML 172.16.2.184 BLOCK
+2026-01-10 05:04:50,533 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 05:05:02,628 - \U0001f680 FastAPI server started
+2026-01-10 05:05:05,986 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 05:05:07,116 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 05:05:07,497 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 05:05:07,851 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:05:08,213 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 05:05:08,581 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:05:08,939 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:05:09,306 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:05:09,668 - LOW ML 172.16.1.51 OBSERVE
+2026-01-10 05:05:10,046 - LOW ML 172.16.1.51 OBSERVE
+2026-01-10 05:05:10,765 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:05:11,137 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:05:11,487 - LOW ML 172.16.2.152 OBSERVE
+2026-01-10 05:05:12,195 - LOW ML 192.168.1.64 OBSERVE
+2026-01-10 05:05:12,564 - LOW ML 172.16.3.9 OBSERVE
+2026-01-10 05:05:12,925 - MEDIUM ML 172.16.1.51 ALERT
+2026-01-10 05:05:13,653 - MEDIUM ML 172.16.1.51 ALERT
+2026-01-10 05:05:14,029 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:05:14,397 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:05:14,756 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:05:15,117 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:05:15,488 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:05:16,540 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:05:16,906 - CRITICAL ML 149.154.166.110 BLOCK
+2026-01-10 05:05:19,867 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 05:08:23,173 - \U0001f680 FastAPI server started
+2026-01-10 05:08:24,548 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 05:08:25,252 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 05:08:25,649 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 05:08:26,047 - LOW ML 172.16.2.227 OBSERVE
+2026-01-10 05:08:26,430 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:08:26,810 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 05:08:27,191 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:08:27,592 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:08:28,029 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:08:28,513 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:08:28,935 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 05:08:28,939 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 05:08:29,093 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:08:29,481 - LOW ML 172.16.112.132 OBSERVE
+2026-01-10 05:08:29,925 - LOW ML 172.16.15.229 OBSERVE
+2026-01-10 05:08:30,312 - LOW ML 172.16.0.154 OBSERVE
+2026-01-10 05:08:30,685 - LOW ML 172.16.0.154 OBSERVE
+2026-01-10 05:08:31,064 - MEDIUM ML 172.16.0.154 ALERT
+2026-01-10 05:08:31,454 - LOW ML 172.16.3.7 OBSERVE
+2026-01-10 05:08:31,853 - LOW ML 172.16.1.131 OBSERVE
+2026-01-10 05:08:32,228 - LOW ML 172.17.151.1 OBSERVE
+2026-01-10 05:08:32,625 - LOW ML 172.16.3.139 OBSERVE
+2026-01-10 05:08:32,996 - LOW ML 172.16.99.254 OBSERVE
+2026-01-10 05:08:33,023 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 05:08:33,026 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 05:08:33,379 - LOW ML 172.16.112.74 OBSERVE
+2026-01-10 05:08:33,754 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:08:34,138 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:08:34,533 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:08:34,926 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:08:35,302 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:08:35,671 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 05:08:36,042 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:08:36,421 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:08:36,812 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:08:37,190 - CRITICAL ML 149.154.166.110 BLOCK
+2026-01-10 05:08:37,884 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 05:08:37,887 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 05:08:44,234 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 05:08:44,237 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 05:10:44,865 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 05:22:41,773 - \U0001f680 FastAPI server started
+2026-01-10 05:22:42,927 - LOW ML 172.16.0.252 OBSERVE
+2026-01-10 05:22:43,700 - LOW ML 172.16.0.252 OBSERVE
+2026-01-10 05:22:44,116 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 05:22:44,557 - LOW ML 202.65.141.82 OBSERVE
+2026-01-10 05:22:44,958 - LOW ML 172.16.2.100 OBSERVE
+2026-01-10 05:22:45,370 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 05:22:45,753 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 05:22:46,168 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:22:46,549 - LOW ML 172.16.1.126 OBSERVE
+2026-01-10 05:22:46,920 - LOW ML 172.16.1.126 OBSERVE
+2026-01-10 05:22:47,332 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:22:47,400 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 05:22:47,401 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 05:22:47,724 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 05:22:48,105 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 05:22:48,492 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:22:48,931 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:22:49,301 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:22:49,680 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 05:22:50,055 - LOW ML 172.16.1.107 OBSERVE
+2026-01-10 05:22:50,438 - LOW ML 172.16.99.254 OBSERVE
+2026-01-10 05:22:50,821 - LOW ML 172.16.99.254 OBSERVE
+2026-01-10 05:22:51,245 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 05:22:51,491 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 05:22:51,493 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 05:22:51,615 - LOW ML 162.247.243.29 OBSERVE
+2026-01-10 05:22:51,999 - LOW ML 172.16.3.23 OBSERVE
+2026-01-10 05:22:52,373 - LOW ML 172.16.3.23 OBSERVE
+2026-01-10 05:22:52,760 - LOW ML 172.16.180.206 OBSERVE
+2026-01-10 05:22:53,133 - LOW ML 172.16.1.234 OBSERVE
+2026-01-10 05:22:53,520 - LOW ML 172.16.1.234 OBSERVE
+2026-01-10 05:22:53,897 - LOW ML 172.16.1.202 OBSERVE
+2026-01-10 05:22:54,283 - LOW ML 172.16.1.202 OBSERVE
+2026-01-10 05:22:54,771 - LOW ML 172.16.4.223 OBSERVE
+2026-01-10 05:22:55,155 - LOW ML 172.16.4.223 OBSERVE
+2026-01-10 05:22:55,537 - MEDIUM ML 172.16.1.202 ALERT
+2026-01-10 05:22:55,912 - LOW ML 172.16.2.152 OBSERVE
+2026-01-10 05:22:56,284 - LOW ML 172.16.2.152 OBSERVE
+2026-01-10 05:22:56,663 - MEDIUM ML 172.16.2.152 ALERT
+2026-01-10 05:22:57,060 - MEDIUM ML 172.16.1.202 ALERT
+2026-01-10 05:22:57,456 - MEDIUM ML 172.16.2.152 ALERT
+2026-01-10 05:22:57,831 - MEDIUM ML 172.16.2.152 ALERT
+2026-01-10 05:22:58,217 - MEDIUM ML 172.16.1.202 ALERT
+2026-01-10 05:22:58,223 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 08:14:39,278 - \U0001f680 FastAPI server started
+2026-01-10 08:14:54,387 - LOW ML 172.16.2.95 OBSERVE
+2026-01-10 08:14:55,453 - LOW ML 172.16.112.253 OBSERVE
+2026-01-10 08:14:55,918 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:14:56,352 - LOW ML 172.16.99.254 OBSERVE
+2026-01-10 08:14:56,812 - LOW ML 172.16.99.254 OBSERVE
+2026-01-10 08:14:57,282 - MEDIUM ML 172.16.99.254 ALERT
+2026-01-10 08:14:57,698 - MEDIUM ML 172.16.99.254 ALERT
+2026-01-10 08:14:58,114 - MEDIUM ML 172.16.99.254 ALERT
+2026-01-10 08:14:58,531 - LOW ML 172.16.3.23 OBSERVE
+2026-01-10 08:14:58,937 - LOW ML 172.16.3.23 OBSERVE
+2026-01-10 08:14:59,338 - LOW ML 172.16.2.245 OBSERVE
+2026-01-10 08:14:59,743 - LOW ML 202.65.141.82 OBSERVE
+2026-01-10 08:15:00,157 - LOW ML 49.174.238.136 OBSERVE
+2026-01-10 08:15:00,564 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:15:00,975 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:15:01,386 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:15:01,809 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:15:02,257 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:15:02,675 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:15:03,119 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:15:03,625 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:15:04,046 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:15:04,474 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:15:04,944 - LOW ML 172.16.0.237 OBSERVE
+2026-01-10 08:15:05,342 - HIGH ML 172.16.99.254 ALERT
+2026-01-10 08:15:05,744 - HIGH ML 172.16.99.254 ALERT
+2026-01-10 08:15:06,167 - LOW ML 172.16.2.6 OBSERVE
+2026-01-10 08:15:06,569 - LOW ML 172.16.3.89 OBSERVE
+2026-01-10 08:15:06,996 - LOW ML 172.16.2.6 OBSERVE
+2026-01-10 08:15:07,409 - MEDIUM ML 172.16.2.6 ALERT
+2026-01-10 08:15:07,806 - LOW ML 172.16.2.51 OBSERVE
+2026-01-10 08:15:08,259 - MEDIUM ML 172.16.3.23 ALERT
+2026-01-10 08:15:08,726 - MEDIUM ML 172.16.3.23 ALERT
+2026-01-10 08:15:09,121 - MEDIUM ML 172.16.3.23 ALERT
+2026-01-10 08:15:09,519 - HIGH ML 172.16.3.23 ALERT
+2026-01-10 08:15:10,071 - LOW ML 172.16.2.30 OBSERVE
+2026-01-10 08:15:10,503 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:15:10,913 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:15:11,333 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:15:11,760 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:15:12,166 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:15:12,764 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:15:13,180 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:15:13,608 - CRITICAL ML 149.154.166.110 BLOCK
+2026-01-10 08:15:37,809 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 08:16:59,045 - \U0001f680 FastAPI server started
+2026-01-10 08:17:02,045 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:17:02,726 - LOW ML 172.16.1.236 OBSERVE
+2026-01-10 08:17:03,100 - LOW ML 172.16.1.236 OBSERVE
+2026-01-10 08:17:03,494 - MEDIUM ML 172.16.1.236 ALERT
+2026-01-10 08:17:03,884 - LOW ML 202.65.141.82 OBSERVE
+2026-01-10 08:17:04,270 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:17:04,654 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:17:05,038 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:17:05,428 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:17:05,789 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:17:06,169 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:17:06,549 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:17:06,924 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:17:07,306 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:17:07,684 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:17:08,065 - LOW ML 0.0.0.0 OBSERVE
+2026-01-10 08:17:08,457 - LOW ML 172.16.1.62 OBSERVE
+2026-01-10 08:17:08,827 - LOW ML 172.16.1.62 OBSERVE
+2026-01-10 08:17:09,208 - MEDIUM ML 172.16.1.62 ALERT
+2026-01-10 08:17:09,582 - LOW ML 172.16.1.222 OBSERVE
+2026-01-10 08:17:09,965 - LOW ML 172.16.112.219 OBSERVE
+2026-01-10 08:17:10,398 - MEDIUM ML 172.16.1.236 ALERT
+2026-01-10 08:17:10,780 - MEDIUM ML 172.16.1.236 ALERT
+2026-01-10 08:17:11,194 - HIGH ML 172.16.1.236 ALERT
+2026-01-10 08:17:11,548 - HIGH ML 172.16.1.236 ALERT
+2026-01-10 08:17:11,901 - LOW ML 172.16.2.245 OBSERVE
+2026-01-10 08:17:12,260 - LOW ML 172.16.112.141 OBSERVE
+2026-01-10 08:17:12,633 - LOW ML 172.16.4.195 OBSERVE
+2026-01-10 08:17:13,000 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:17:13,370 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:17:13,740 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:17:14,216 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:17:14,617 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:17:14,998 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:17:15,390 - CRITICAL ML 149.154.166.110 BLOCK
+2026-01-10 08:17:30,045 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 08:18:55,368 - \U0001f680 FastAPI server started
+2026-01-10 08:19:02,017 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:19:02,755 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:19:03,143 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:19:03,534 - LOW ML 172.16.4.193 OBSERVE
+2026-01-10 08:19:03,902 - LOW ML 172.16.0.110 OBSERVE
+2026-01-10 08:19:04,264 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:19:04,621 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:19:04,981 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:19:05,349 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:19:05,714 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:19:06,082 - LOW ML 172.16.2.115 OBSERVE
+2026-01-10 08:19:06,465 - LOW ML 172.16.2.115 OBSERVE
+2026-01-10 08:19:06,851 - MEDIUM ML 172.16.2.115 ALERT
+2026-01-10 08:19:07,228 - MEDIUM ML 172.16.2.115 ALERT
+2026-01-10 08:19:07,611 - MEDIUM ML 172.16.2.115 ALERT
+2026-01-10 08:19:07,986 - HIGH ML 172.16.2.115 ALERT
+2026-01-10 08:19:08,365 - HIGH ML 172.16.2.115 ALERT
+2026-01-10 08:19:08,739 - LOW ML 172.16.3.7 OBSERVE
+2026-01-10 08:19:09,115 - LOW ML 172.16.1.127 OBSERVE
+2026-01-10 08:19:09,499 - LOW ML 172.16.3.7 OBSERVE
+2026-01-10 08:19:09,890 - LOW ML 172.16.1.127 OBSERVE
+2026-01-10 08:19:10,282 - MEDIUM ML 172.16.3.7 ALERT
+2026-01-10 08:19:10,653 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:19:11,029 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:19:11,416 - LOW ML 172.16.3.89 OBSERVE
+2026-01-10 08:19:11,806 - LOW ML 172.16.1.236 OBSERVE
+2026-01-10 08:19:12,169 - LOW ML 172.16.2.185 OBSERVE
+2026-01-10 08:19:12,556 - LOW ML 172.16.2.185 OBSERVE
+2026-01-10 08:19:12,920 - MEDIUM ML 172.16.2.185 ALERT
+2026-01-10 08:19:13,287 - LOW ML 172.16.0.224 OBSERVE
+2026-01-10 08:19:13,652 - LOW ML 172.16.2.36 OBSERVE
+2026-01-10 08:19:14,022 - LOW ML 172.16.1.167 OBSERVE
+2026-01-10 08:19:14,396 - LOW ML 172.16.0.196 OBSERVE
+2026-01-10 08:19:14,766 - LOW ML 172.16.0.72 OBSERVE
+2026-01-10 08:19:15,128 - MEDIUM ML 172.16.3.7 ALERT
+2026-01-10 08:19:15,495 - MEDIUM ML 172.16.3.7 ALERT
+2026-01-10 08:19:15,861 - HIGH ML 172.16.3.7 ALERT
+2026-01-10 08:19:16,230 - LOW ML 172.16.7.124 OBSERVE
+2026-01-10 08:19:16,595 - LOW ML 172.16.4.195 OBSERVE
+2026-01-10 08:19:16,962 - LOW ML 172.16.6.15 OBSERVE
+2026-01-10 08:19:17,339 - LOW ML 172.16.4.67 OBSERVE
+2026-01-10 08:19:17,740 - LOW ML 172.16.2.30 OBSERVE
+2026-01-10 08:19:18,164 - LOW ML 172.16.12.220 OBSERVE
+2026-01-10 08:19:18,543 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:19:18,937 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:19:19,346 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:19:19,753 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:19:20,147 - LOW ML 172.16.1.167 OBSERVE
+2026-01-10 08:19:20,554 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:19:20,955 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:19:21,376 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:19:21,770 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:19:22,179 - HIGH ML 149.154.166.110 ALERT
+2026-01-10 08:19:22,601 - CRITICAL ML 149.154.166.110 BLOCK
+2026-01-10 08:21:24,040 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:21:24,430 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:21:32,656 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 08:35:00,917 - \U0001f680 FastAPI server started
+2026-01-10 08:35:03,870 - LOW ML 172.16.112.220 OBSERVE
+2026-01-10 08:35:04,547 - LOW ML 172.16.43.41 OBSERVE
+2026-01-10 08:35:04,901 - LOW ML 172.16.0.245 OBSERVE
+2026-01-10 08:35:05,259 - LOW ML 0.0.0.0 OBSERVE
+2026-01-10 08:35:05,622 - LOW ML 172.16.3.164 OBSERVE
+2026-01-10 08:35:05,979 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:35:06,335 - LOW ML 202.65.141.82 OBSERVE
+2026-01-10 08:35:06,689 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:35:07,047 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:35:07,417 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:35:07,768 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:35:08,132 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:35:08,494 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:35:08,852 - LOW ML 172.16.0.245 OBSERVE
+2026-01-10 08:35:09,216 - LOW ML 3.109.104.219 OBSERVE
+2026-01-10 08:35:09,578 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:35:09,938 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:35:10,293 - LOW ML 172.16.115.32 OBSERVE
+2026-01-10 08:35:10,651 - LOW ML 172.16.2.90 OBSERVE
+2026-01-10 08:35:11,015 - LOW ML 172.16.1.229 OBSERVE
+2026-01-10 08:35:11,377 - LOW ML 172.16.1.229 OBSERVE
+2026-01-10 08:35:11,733 - LOW ML 13.225.239.66 OBSERVE
+2026-01-10 08:35:12,088 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:35:12,466 - LOW ML 13.225.239.66 OBSERVE
+2026-01-10 08:35:12,822 - MEDIUM ML 13.225.239.66 ALERT
+2026-01-10 08:35:13,181 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:35:13,542 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:35:13,890 - CRITICAL ML 172.16.2.184 BLOCK
+2026-01-10 08:35:23,412 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 08:37:10,814 - \U0001f680 FastAPI server started
+2026-01-10 08:37:13,654 - LOW ML 172.16.2.152 OBSERVE
+2026-01-10 08:37:14,330 - LOW ML 172.16.2.152 OBSERVE
+2026-01-10 08:37:14,691 - MEDIUM ML 172.16.2.152 ALERT
+2026-01-10 08:37:15,053 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:37:15,423 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:37:15,781 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:37:16,155 - MEDIUM ML 172.16.2.152 ALERT
+2026-01-10 08:37:16,517 - MEDIUM ML 172.16.2.152 ALERT
+2026-01-10 08:37:16,873 - HIGH ML 172.16.2.152 ALERT
+2026-01-10 08:37:17,244 - HIGH ML 172.16.2.152 ALERT
+2026-01-10 08:37:17,605 - HIGH ML 172.16.2.152 ALERT
+2026-01-10 08:37:17,970 - HIGH ML 172.16.2.152 ALERT
+2026-01-10 08:37:18,334 - CRITICAL ML 172.16.2.152 BLOCK
+2026-01-10 08:38:19,018 - LOW ML 172.16.0.224 OBSERVE
+2026-01-10 08:38:19,380 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:38:19,745 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:38:20,116 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:38:20,486 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:38:21,253 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:38:21,621 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:38:22,004 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:38:22,384 - LOW ML 172.16.0.228 OBSERVE
+2026-01-10 08:38:22,750 - LOW ML 172.16.0.228 OBSERVE
+2026-01-10 08:38:23,123 - MEDIUM ML 172.16.0.228 ALERT
+2026-01-10 08:38:23,498 - MEDIUM ML 172.16.0.228 ALERT
+2026-01-10 08:38:23,877 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:38:24,272 - LOW ML 104.18.33.150 OBSERVE
+2026-01-10 08:38:24,633 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:38:24,997 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:38:25,391 - LOW ML 104.18.33.150 OBSERVE
+2026-01-10 08:38:25,780 - LOW ML 3.109.104.219 OBSERVE
+2026-01-10 08:38:26,145 - MEDIUM ML 104.18.33.150 ALERT
+2026-01-10 08:38:26,513 - MEDIUM ML 104.18.33.150 ALERT
+2026-01-10 08:38:26,882 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:38:27,250 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:38:27,620 - LOW ML 172.16.0.128 OBSERVE
+2026-01-10 08:38:27,981 - LOW ML 172.16.3.7 OBSERVE
+2026-01-10 08:38:28,381 - LOW ML 172.16.3.214 OBSERVE
+2026-01-10 08:38:28,766 - LOW ML 162.159.129.53 OBSERVE
+2026-01-10 08:38:29,136 - LOW ML 162.159.129.53 OBSERVE
+2026-01-10 08:38:29,722 - CRITICAL ML 172.16.2.184 BLOCK
+2026-01-10 08:39:30,508 - LOW ML 172.16.2.103 OBSERVE
+2026-01-10 08:39:30,885 - LOW ML 172.16.3.164 OBSERVE
+2026-01-10 08:39:31,252 - LOW ML 172.16.3.193 OBSERVE
+2026-01-10 08:40:07,231 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 08:40:12,163 - \U0001f680 FastAPI server started
+2026-01-10 08:41:49,368 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 08:42:27,556 - \U0001f680 FastAPI server started
+2026-01-10 08:42:30,241 - LOW ML 172.16.3.7 OBSERVE
+2026-01-10 08:42:30,962 - LOW ML 172.16.112.132 OBSERVE
+2026-01-10 08:42:31,334 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:42:31,709 - LOW ML 3.109.104.219 OBSERVE
+2026-01-10 08:42:32,118 - LOW ML 202.65.141.82 OBSERVE
+2026-01-10 08:42:32,501 - LOW ML 172.16.112.71 OBSERVE
+2026-01-10 08:42:32,892 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:42:33,262 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:42:33,623 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:42:33,986 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:42:34,370 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:42:34,740 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:42:35,104 - LOW ML 162.159.129.53 OBSERVE
+2026-01-10 08:42:35,482 - LOW ML 162.159.129.53 OBSERVE
+2026-01-10 08:42:35,842 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:42:36,225 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:42:36,590 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:42:36,950 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:42:37,320 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:42:37,689 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:42:38,085 - CRITICAL ML 172.16.2.184 BLOCK
+2026-01-10 08:43:11,538 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 08:45:20,586 - \U0001f680 FastAPI server started
+2026-01-10 08:45:22,733 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:45:23,417 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:45:23,783 - LOW ML 172.16.2.184 OBSERVE
+2026-01-10 08:45:24,161 - LOW ML 172.16.112.245 OBSERVE
+2026-01-10 08:45:24,539 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:45:24,894 - LOW ML 149.154.166.110 OBSERVE
+2026-01-10 08:45:25,239 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:45:25,596 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:45:25,962 - MEDIUM ML 172.16.2.184 ALERT
+2026-01-10 08:45:26,324 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:45:26,692 - MEDIUM ML 149.154.166.110 ALERT
+2026-01-10 08:45:27,052 - LOW ML 172.16.0.100 OBSERVE
+2026-01-10 08:45:27,418 - LOW ML 172.16.0.100 OBSERVE
+2026-01-10 08:45:27,782 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:45:28,141 - LOW ML 172.64.154.106 OBSERVE
+2026-01-10 08:45:28,500 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:45:28,854 - HIGH ML 172.16.2.184 ALERT
+2026-01-10 08:45:29,209 - LOW ML 172.64.154.106 OBSERVE
+2026-01-10 08:45:29,571 - MEDIUM ML 172.64.154.106 ALERT
+2026-01-10 08:45:29,935 - CRITICAL ML 172.16.2.184 BLOCK
+2026-01-10 08:45:36,015 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 08:54:54,799 - \U0001f680 FastAPI server started
+2026-01-10 08:55:04,961 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 08:56:13,748 - \U0001f680 FastAPI server started
+2026-01-10 08:56:17,574 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 08:56:18,265 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 08:56:18,641 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 08:56:19,062 - LOW Exploitation 172.16.0.82 OBSERVE
+2026-01-10 08:56:19,433 - LOW Exploitation 172.16.1.164 OBSERVE
+2026-01-10 08:56:19,797 - LOW Exploitation 172.16.1.164 OBSERVE
+2026-01-10 08:56:20,176 - MEDIUM Exploitation 172.16.1.164 ALERT
+2026-01-10 08:56:20,544 - MEDIUM Exploitation 172.16.1.164 ALERT
+2026-01-10 08:56:20,924 - HIGH Exploitation 172.16.1.164 ALERT
+2026-01-10 08:56:21,288 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 08:56:21,669 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 08:56:22,029 - LOW Exploitation 172.16.43.41 OBSERVE
+2026-01-10 08:56:22,397 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 08:56:22,770 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 08:56:23,137 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 08:56:23,515 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 08:56:23,883 - LOW Exploitation 172.16.0.79 OBSERVE
+2026-01-10 08:56:24,467 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 08:56:24,830 - LOW Exploitation 3.109.104.219 OBSERVE
+2026-01-10 08:56:25,202 - CRITICAL Exploitation 172.16.2.184 BLOCK
+2026-01-10 08:56:41,927 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 09:00:10,596 - \U0001f680 FastAPI server started
+2026-01-10 09:00:30,527 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:00:31,187 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:00:31,546 - LOW Exploitation 163.70.140.60 OBSERVE
+2026-01-10 09:00:31,911 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 09:00:32,271 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:00:32,621 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:00:32,967 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:00:33,327 - LOW Exploitation 172.16.3.100 OBSERVE
+2026-01-10 09:00:33,678 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:00:34,030 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:00:34,383 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:00:34,738 - LOW Exploitation 172.16.3.214 OBSERVE
+2026-01-10 09:00:35,093 - CRITICAL Exploitation 172.16.2.184 BLOCK
+2026-01-10 09:00:38,001 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 09:00:38,002 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 09:00:41,953 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 09:00:41,954 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 09:00:46,300 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 09:00:46,302 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 09:00:46,988 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 09:10:14,121 - \U0001f680 FastAPI server started
+2026-01-10 09:10:19,160 - LOW Exploitation 172.16.107.138 OBSERVE
+2026-01-10 09:10:19,838 - LOW Exploitation 172.16.3.163 OBSERVE
+2026-01-10 09:10:20,205 - LOW Exploitation 172.16.3.163 OBSERVE
+2026-01-10 09:10:20,568 - MEDIUM Exploitation 172.16.3.163 ALERT
+2026-01-10 09:10:20,938 - MEDIUM Exploitation 172.16.3.163 ALERT
+2026-01-10 09:10:21,297 - HIGH Exploitation 172.16.3.163 ALERT
+2026-01-10 09:10:21,666 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:10:22,027 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 09:10:22,383 - LOW Exploitation 172.16.3.4 OBSERVE
+2026-01-10 09:10:22,742 - LOW Exploitation 172.16.3.4 OBSERVE
+2026-01-10 09:10:23,108 - MEDIUM Exploitation 172.16.3.4 ALERT
+2026-01-10 09:10:23,465 - MEDIUM Exploitation 172.16.3.4 ALERT
+2026-01-10 09:10:23,825 - HIGH Exploitation 172.16.3.4 ALERT
+2026-01-10 09:10:24,204 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:10:24,564 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:10:24,921 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:10:25,275 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:10:25,626 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:10:25,983 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:10:26,344 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:10:26,702 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:10:27,072 - CRITICAL Exploitation 172.16.2.184 BLOCK
+2026-01-10 09:11:27,652 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:11:28,009 - LOW Exploitation 172.16.107.138 OBSERVE
+2026-01-10 09:11:28,369 - LOW Exploitation 172.16.1.168 OBSERVE
+2026-01-10 09:11:28,726 - LOW Exploitation 172.16.1.168 OBSERVE
+2026-01-10 09:11:29,087 - MEDIUM Exploitation 172.16.1.168 ALERT
+2026-01-10 09:11:29,444 - MEDIUM Exploitation 172.16.1.168 ALERT
+2026-01-10 09:11:29,823 - HIGH Exploitation 172.16.1.168 ALERT
+2026-01-10 09:11:38,358 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 09:21:59,100 - \U0001f680 FastAPI server started
+2026-01-10 09:22:15,189 - LOW Exploitation 172.16.166.9 OBSERVE
+2026-01-10 09:22:15,873 - LOW Exploitation 172.16.2.103 OBSERVE
+2026-01-10 09:22:16,227 - LOW Exploitation 172.16.2.103 OBSERVE
+2026-01-10 09:22:16,586 - LOW Exploitation 172.16.3.214 OBSERVE
+2026-01-10 09:22:16,973 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:22:17,331 - MEDIUM Exploitation 172.16.2.103 ALERT
+2026-01-10 09:22:17,675 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 09:22:18,064 - LOW Exploitation 172.16.2.6 OBSERVE
+2026-01-10 09:22:18,414 - LOW Exploitation 172.16.2.143 OBSERVE
+2026-01-10 09:22:18,757 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:22:19,113 - LOW Exploitation 172.16.3.214 OBSERVE
+2026-01-10 09:22:19,470 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:22:19,820 - MEDIUM Exploitation 172.16.2.103 ALERT
+2026-01-10 09:22:20,169 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:22:20,854 - HIGH Exploitation 172.16.2.103 ALERT
+2026-01-10 09:22:21,215 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:22:21,911 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:22:22,630 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:22:22,992 - LOW Exploitation 172.16.1.22 OBSERVE
+2026-01-10 09:22:23,352 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 09:22:23,708 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 09:22:24,079 - MEDIUM Exploitation 172.16.3.164 ALERT
+2026-01-10 09:30:02,381 - \U0001f680 FastAPI server started
+2026-01-10 09:30:43,078 - LOW Exploitation 172.16.112.71 OBSERVE
+2026-01-10 09:30:43,748 - LOW Exploitation 172.16.5.54 OBSERVE
+2026-01-10 09:30:44,099 - LOW Exploitation 172.16.7.38 OBSERVE
+2026-01-10 09:30:44,447 - LOW Exploitation 172.16.1.168 OBSERVE
+2026-01-10 09:30:44,795 - LOW Exploitation 172.16.3.9 OBSERVE
+2026-01-10 09:30:45,185 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:30:45,543 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 09:30:45,896 - LOW Exploitation 172.16.2.36 OBSERVE
+2026-01-10 09:30:46,249 - LOW Exploitation 172.16.2.38 OBSERVE
+2026-01-10 09:30:46,595 - LOW Exploitation 172.16.2.38 OBSERVE
+2026-01-10 09:30:46,963 - MEDIUM Exploitation 172.16.2.38 ALERT
+2026-01-10 09:30:47,318 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:30:47,677 - MEDIUM Exploitation 172.16.2.38 ALERT
+2026-01-10 09:30:48,038 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:30:48,381 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:30:48,728 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:30:49,117 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:30:49,504 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:30:49,962 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:30:50,377 - LOW Exploitation 172.16.0.236 OBSERVE
+2026-01-10 09:30:50,726 - LOW Exploitation 172.16.1.223 OBSERVE
+2026-01-10 09:30:51,077 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 09:30:51,484 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 09:30:51,908 - MEDIUM Exploitation 172.16.3.164 ALERT
+2026-01-10 09:30:52,763 - LOW Exploitation 172.16.1.223 OBSERVE
+2026-01-10 09:30:54,004 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:30:54,658 - CRITICAL Exploitation 172.16.2.184 BLOCK
+2026-01-10 09:31:55,597 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:31:55,947 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:31:56,306 - LOW Exploitation 172.16.3.23 OBSERVE
+2026-01-10 09:31:56,662 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 09:31:57,019 - MEDIUM Exploitation 172.16.3.164 ALERT
+2026-01-10 09:31:57,373 - LOW Exploitation 172.16.4.228 OBSERVE
+2026-01-10 09:36:30,029 - LOW Exploitation 172.16.1.223 OBSERVE
+2026-01-10 09:36:30,382 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 09:36:30,728 - LOW Exploitation 172.16.31.226 OBSERVE
+2026-01-10 09:36:32,611 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 09:36:39,026 - \U0001f680 FastAPI server started
+2026-01-10 09:36:40,047 - LOW Exploitation 172.16.4.181 OBSERVE
+2026-01-10 09:36:42,169 - LOW Exploitation 172.16.107.138 OBSERVE
+2026-01-10 09:36:42,552 - LOW Exploitation 172.16.0.76 OBSERVE
+2026-01-10 09:36:42,923 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:36:43,272 - LOW Exploitation 172.16.1.222 OBSERVE
+2026-01-10 09:36:43,626 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 09:36:43,980 - LOW Exploitation 172.16.6.155 OBSERVE
+2026-01-10 09:36:44,340 - LOW Exploitation 172.16.4.113 OBSERVE
+2026-01-10 09:36:44,689 - LOW Exploitation 172.16.5.54 OBSERVE
+2026-01-10 09:36:45,044 - LOW Exploitation 172.16.107.131 OBSERVE
+2026-01-10 09:36:45,405 - LOW Exploitation 172.16.3.214 OBSERVE
+2026-01-10 09:36:45,770 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:36:46,119 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:36:46,461 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:36:46,819 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:36:47,172 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:36:47,536 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:36:47,886 - LOW Exploitation 172.16.0.236 OBSERVE
+2026-01-10 09:36:48,239 - LOW Exploitation 172.16.1.223 OBSERVE
+2026-01-10 09:36:48,593 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:36:48,970 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:36:49,326 - LOW Exploitation 172.16.107.138 OBSERVE
+2026-01-10 09:36:49,676 - LOW Exploitation 172.16.3.214 OBSERVE
+2026-01-10 09:36:50,037 - LOW Exploitation 172.16.8.98 OBSERVE
+2026-01-10 09:36:50,489 - LOW Exploitation 172.16.4.7 OBSERVE
+2026-01-10 09:36:50,868 - LOW Exploitation 172.16.112.141 OBSERVE
+2026-01-10 09:36:51,221 - LOW Exploitation 172.16.3.23 OBSERVE
+2026-01-10 09:36:51,570 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:36:51,918 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:36:52,274 - LOW Exploitation 172.16.1.223 OBSERVE
+2026-01-10 09:36:52,629 - LOW Exploitation 172.16.107.131 OBSERVE
+2026-01-10 09:36:52,973 - LOW Exploitation 172.16.2.152 OBSERVE
+2026-01-10 09:36:53,387 - MEDIUM Exploitation 172.16.3.214 ALERT
+2026-01-10 09:36:53,781 - LOW Exploitation 172.16.3.62 OBSERVE
+2026-01-10 09:36:54,187 - LOW Exploitation 172.16.2.152 OBSERVE
+2026-01-10 09:36:54,547 - MEDIUM Exploitation 172.16.2.152 ALERT
+2026-01-10 09:36:54,930 - LOW Exploitation 172.16.3.163 OBSERVE
+2026-01-10 09:36:55,356 - LOW Exploitation 172.16.3.4 OBSERVE
+2026-01-10 09:36:55,832 - LOW Exploitation 172.16.0.68 OBSERVE
+2026-01-10 09:36:56,252 - LOW Exploitation 172.16.3.4 OBSERVE
+2026-01-10 09:36:56,669 - LOW Exploitation 172.16.2.203 OBSERVE
+2026-01-10 09:36:57,032 - MEDIUM Exploitation 172.16.107.138 ALERT
+2026-01-10 09:36:57,390 - LOW Exploitation 172.16.3.88 OBSERVE
+2026-01-10 09:36:57,850 - LOW Exploitation 172.16.4.147 OBSERVE
+2026-01-10 09:36:58,245 - LOW Exploitation 172.16.0.183 OBSERVE
+2026-01-10 09:36:58,621 - LOW Exploitation 172.16.5.111 OBSERVE
+2026-01-10 09:36:58,979 - LOW Exploitation 172.16.3.62 OBSERVE
+2026-01-10 09:36:59,380 - MEDIUM Exploitation 172.16.107.131 ALERT
+2026-01-10 09:36:59,749 - LOW Exploitation 172.16.0.68 OBSERVE
+2026-01-10 09:37:00,145 - LOW Exploitation 172.16.4.107 OBSERVE
+2026-01-10 09:37:00,574 - LOW Exploitation 172.16.107.120 OBSERVE
+2026-01-10 09:37:01,040 - LOW Exploitation 172.16.107.115 OBSERVE
+2026-01-10 09:37:01,407 - MEDIUM Exploitation 172.16.107.138 ALERT
+2026-01-10 09:37:01,817 - MEDIUM Exploitation 172.16.3.214 ALERT
+2026-01-10 09:37:02,189 - HIGH Exploitation 172.16.3.214 ALERT
+2026-01-10 09:37:02,590 - LOW Exploitation 172.16.51.131 OBSERVE
+2026-01-10 09:37:02,973 - LOW Exploitation 172.16.4.228 OBSERVE
+2026-01-10 09:37:03,342 - MEDIUM Exploitation 172.16.107.131 ALERT
+2026-01-10 09:37:03,698 - LOW Exploitation 172.16.2.23 OBSERVE
+2026-01-10 09:37:04,070 - LOW Exploitation 172.16.4.208 OBSERVE
+2026-01-10 09:37:04,470 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 09:37:04,836 - HIGH Exploitation 172.16.3.214 ALERT
+2026-01-10 09:37:05,215 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 09:37:05,585 - HIGH Exploitation 172.16.3.214 ALERT
+2026-01-10 09:37:05,972 - MEDIUM Exploitation 172.16.3.4 ALERT
+2026-01-10 09:37:06,338 - MEDIUM Exploitation 172.16.3.4 ALERT
+2026-01-10 09:37:06,695 - LOW Exploitation 172.16.2.245 OBSERVE
+2026-01-10 09:37:07,058 - LOW Exploitation 172.16.3.106 OBSERVE
+2026-01-10 09:37:07,472 - LOW Exploitation 172.16.3.106 OBSERVE
+2026-01-10 09:37:07,835 - CRITICAL Exploitation 172.16.3.214 BLOCK
+2026-01-10 09:38:08,609 - LOW Exploitation 172.16.4.208 OBSERVE
+2026-01-10 09:40:41,381 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 09:44:16,457 - \U0001f680 FastAPI server started
+2026-01-10 09:44:47,768 - LOW Exploitation 172.16.107.131 OBSERVE
+2026-01-10 09:44:48,636 - LOW Exploitation 172.16.2.227 OBSERVE
+2026-01-10 09:44:49,652 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:44:50,209 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 09:44:50,725 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 09:44:51,239 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:44:51,614 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:44:52,008 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 09:44:52,393 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:44:52,778 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:44:53,160 - LOW Exploitation 172.16.4.143 OBSERVE
+2026-01-10 09:44:53,538 - LOW Exploitation 172.16.3.214 OBSERVE
+2026-01-10 09:44:53,928 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 09:44:54,339 - CRITICAL Exploitation 172.16.2.184 BLOCK
+2026-01-10 09:45:55,301 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:45:55,699 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:45:56,118 - LOW Exploitation 172.16.2.152 OBSERVE
+2026-01-10 09:45:56,535 - LOW Exploitation 172.16.107.138 OBSERVE
+2026-01-10 09:45:56,961 - LOW Exploitation 172.16.99.254 OBSERVE
+2026-01-10 09:45:57,361 - LOW Exploitation 172.16.0.71 OBSERVE
+2026-01-10 09:45:57,757 - LOW Exploitation 172.16.0.71 OBSERVE
+2026-01-10 09:45:58,223 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 09:45:58,658 - LOW Exploitation 172.16.107.138 OBSERVE
+2026-01-10 09:45:59,132 - LOW Exploitation 172.16.4.143 OBSERVE
+2026-01-10 09:45:59,592 - LOW Exploitation 172.16.4.254 OBSERVE
+2026-01-10 09:45:59,991 - MEDIUM Exploitation 172.16.107.138 ALERT
+2026-01-10 09:46:00,407 - LOW Exploitation 172.16.5.54 OBSERVE
+2026-01-10 09:46:00,804 - LOW Exploitation 172.16.3.214 OBSERVE
+2026-01-10 09:46:01,248 - LOW Exploitation 172.16.0.224 OBSERVE
+2026-01-10 09:46:01,690 - LOW Exploitation 172.16.2.103 OBSERVE
+2026-01-10 09:46:02,081 - LOW Exploitation 172.16.107.131 OBSERVE
+2026-01-10 09:46:02,514 - MEDIUM Exploitation 172.16.107.138 ALERT
+2026-01-10 09:46:02,921 - MEDIUM Exploitation 172.16.107.131 ALERT
+2026-01-10 09:46:03,432 - LOW Exploitation 172.16.2.152 OBSERVE
+2026-01-10 09:46:03,827 - LOW Exploitation 172.16.4.223 OBSERVE
+2026-01-10 09:46:04,376 - LOW Exploitation 172.16.1.223 OBSERVE
+2026-01-10 09:46:04,785 - MEDIUM Exploitation 172.16.3.214 ALERT
+2026-01-10 09:46:05,179 - HIGH Exploitation 172.16.107.138 ALERT
+2026-01-10 09:46:05,633 - LOW Exploitation 172.16.1.222 OBSERVE
+2026-01-10 09:46:06,024 - MEDIUM Exploitation 172.16.0.71 ALERT
+2026-01-10 09:46:06,434 - LOW Exploitation 172.16.0.224 OBSERVE
+2026-01-10 09:46:07,009 - LOW Exploitation 172.16.2.103 OBSERVE
+2026-01-10 09:46:07,416 - MEDIUM Exploitation 172.16.0.71 ALERT
+2026-01-10 09:46:07,830 - MEDIUM Exploitation 172.16.107.131 ALERT
+2026-01-10 09:46:08,234 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 09:46:08,690 - LOW Exploitation 172.16.99.254 OBSERVE
+2026-01-10 09:46:09,102 - MEDIUM Exploitation 172.16.99.254 ALERT
+2026-01-10 09:46:09,685 - LOW Exploitation 172.16.1.223 OBSERVE
+2026-01-10 09:46:10,261 - HIGH Exploitation 172.16.107.138 ALERT
+2026-01-10 09:46:10,936 - MEDIUM Exploitation 172.16.3.214 ALERT
+2026-01-10 09:46:11,698 - MEDIUM Exploitation 172.16.0.224 ALERT
+2026-01-10 09:46:12,177 - MEDIUM Exploitation 172.16.2.103 ALERT
+2026-01-10 09:46:12,564 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:46:12,961 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:46:13,351 - HIGH Exploitation 149.154.166.110 ALERT
+2026-01-10 09:47:14,335 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:47:14,739 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:49:16,035 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:50:16,846 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 09:50:17,234 - LOW Exploitation 172.16.107.131 OBSERVE
+2026-01-10 09:50:17,614 - LOW Exploitation 172.16.2.152 OBSERVE
+2026-01-10 09:50:17,996 - LOW Exploitation 172.16.2.152 OBSERVE
+2026-01-10 09:50:18,383 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:50:18,780 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 09:50:19,177 - HIGH Exploitation 149.154.166.110 ALERT
+2026-01-10 09:51:05,203 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 10:10:23,475 - \U0001f680 FastAPI server started
+2026-01-10 10:11:03,312 - LOW Exploitation 172.16.0.181 OBSERVE
+2026-01-10 10:11:04,144 - LOW Exploitation 172.16.4.147 OBSERVE
+2026-01-10 10:11:04,595 - LOW Exploitation 172.16.4.107 OBSERVE
+2026-01-10 10:11:05,041 - LOW Exploitation 172.16.4.208 OBSERVE
+2026-01-10 10:11:05,472 - LOW Exploitation 172.16.107.114 OBSERVE
+2026-01-10 10:11:05,904 - LOW Exploitation 172.16.4.113 OBSERVE
+2026-01-10 10:11:06,347 - LOW Exploitation 172.16.107.116 OBSERVE
+2026-01-10 10:11:06,781 - LOW Exploitation 172.16.3.214 OBSERVE
+2026-01-10 10:11:07,213 - LOW Exploitation 172.16.0.224 OBSERVE
+2026-01-10 10:11:07,663 - LOW Exploitation 172.16.2.6 OBSERVE
+2026-01-10 10:11:08,082 - LOW Exploitation 172.16.107.119 OBSERVE
+2026-01-10 10:11:08,508 - LOW Exploitation 172.16.4.208 OBSERVE
+2026-01-10 10:11:08,901 - LOW Exploitation 172.16.3.214 OBSERVE
+2026-01-10 10:11:09,326 - LOW Exploitation 172.16.4.147 OBSERVE
+2026-01-10 10:11:09,740 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 10:11:10,160 - LOW Exploitation 172.16.0.224 OBSERVE
+2026-01-10 10:11:10,582 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 10:11:11,030 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 10:11:11,438 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 10:11:11,893 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 10:11:12,313 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 10:11:12,722 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 10:11:13,196 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 10:11:13,606 - LOW Exploitation 172.16.112.114 OBSERVE
+2026-01-10 10:11:14,006 - LOW Exploitation 172.16.4.224 OBSERVE
+2026-01-10 10:11:14,397 - LOW Exploitation 172.16.4.224 OBSERVE
+2026-01-10 10:11:14,815 - MEDIUM Exploitation 172.16.3.214 ALERT
+2026-01-10 10:11:15,206 - MEDIUM Exploitation 172.16.3.214 ALERT
+2026-01-10 10:11:15,620 - MEDIUM Exploitation 172.16.4.208 ALERT
+2026-01-10 10:11:16,077 - MEDIUM Exploitation 172.16.4.147 ALERT
+2026-01-10 10:11:16,482 - HIGH Exploitation 172.16.3.214 ALERT
+2026-01-10 10:11:16,951 - MEDIUM Exploitation 172.16.4.224 ALERT
+2026-01-10 10:11:17,379 - MEDIUM Exploitation 172.16.0.224 ALERT
+2026-01-10 10:11:17,802 - MEDIUM Exploitation 172.16.0.224 ALERT
+2026-01-10 10:11:18,232 - HIGH Exploitation 172.16.3.214 ALERT
+2026-01-10 10:11:18,651 - HIGH Exploitation 172.16.0.224 ALERT
+2026-01-10 10:11:19,123 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 10:11:19,577 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 10:11:19,992 - LOW Exploitation 172.16.4.48 OBSERVE
+2026-01-10 10:11:20,410 - LOW Exploitation 172.16.4.48 OBSERVE
+2026-01-10 10:11:20,820 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 10:11:21,249 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 10:11:21,706 - HIGH Exploitation 172.16.0.224 ALERT
+2026-01-10 10:11:22,117 - LOW Exploitation 172.16.0.128 OBSERVE
+2026-01-10 10:11:22,566 - HIGH Exploitation 172.16.3.214 ALERT
+2026-01-10 10:11:23,037 - MEDIUM Exploitation 172.16.4.147 ALERT
+2026-01-10 10:11:23,510 - HIGH Exploitation 172.16.0.224 ALERT
+2026-01-10 10:11:23,936 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 10:11:24,360 - LOW Exploitation 172.16.3.164 OBSERVE
+2026-01-10 10:11:24,854 - MEDIUM Exploitation 172.16.3.164 ALERT
+2026-01-10 10:11:25,254 - MEDIUM Exploitation 172.16.3.164 ALERT
+2026-01-10 10:11:25,695 - HIGH Exploitation 172.16.3.164 ALERT
+2026-01-10 10:11:26,114 - HIGH Exploitation 172.16.3.164 ALERT
+2026-01-10 10:11:26,575 - LOW Exploitation 172.16.2.51 OBSERVE
+2026-01-10 10:11:26,977 - CRITICAL Exploitation 172.16.3.214 BLOCK
+2026-01-10 10:12:27,849 - LOW Exploitation 172.16.3.108 OBSERVE
+2026-01-10 10:13:28,747 - LOW Exploitation 172.16.0.224 OBSERVE
+2026-01-10 10:13:29,139 - MEDIUM Exploitation 172.16.0.224 ALERT
+2026-01-10 10:13:29,531 - LOW Exploitation 172.16.4.48 OBSERVE
+2026-01-10 10:13:29,921 - MEDIUM Exploitation 172.16.4.48 ALERT
+2026-01-10 10:13:30,302 - MEDIUM Exploitation 172.16.4.48 ALERT
+2026-01-10 10:13:30,687 - LOW Exploitation 172.16.107.138 OBSERVE
+2026-01-10 10:13:31,065 - LOW Exploitation 172.16.2.228 OBSERVE
+2026-01-10 10:13:31,444 - LOW Exploitation 142.250.195.74 OBSERVE
+2026-01-10 10:13:31,819 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 10:13:32,215 - LOW Exploitation 172.16.0.181 OBSERVE
+2026-01-10 10:13:32,603 - LOW Exploitation 172.16.5.71 OBSERVE
+2026-01-10 10:13:32,989 - LOW Exploitation 142.250.195.74 OBSERVE
+2026-01-10 10:13:33,386 - MEDIUM Exploitation 172.16.4.48 ALERT
+2026-01-10 10:13:33,780 - HIGH Exploitation 172.16.4.48 ALERT
+2026-01-10 10:13:34,163 - LOW Exploitation 172.16.88.61 OBSERVE
+2026-01-10 10:13:34,546 - HIGH Exploitation 172.16.4.48 ALERT
+2026-01-10 10:13:34,926 - CRITICAL Exploitation 172.16.4.48 BLOCK
+2026-01-10 10:14:35,817 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 10:14:36,199 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 10:14:36,578 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 10:14:36,967 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 10:14:37,347 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 10:14:37,730 - HIGH Exploitation 149.154.166.110 ALERT
+2026-01-10 10:14:38,104 - HIGH Exploitation 149.154.166.110 ALERT
+2026-01-10 10:14:38,493 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 10:14:38,901 - CRITICAL Exploitation 149.154.166.110 BLOCK
+2026-01-10 10:18:41,170 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 10:18:41,576 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 10:21:43,317 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 10:21:44,028 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 10:22:45,021 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 10:22:45,505 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 10:23:24,108 - \U0001f6d1 FastAPI server shutting down

@@ -1,0 +1,130 @@
+[
+  {
+    "timestamp": "2026-01-10 10:11:06",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null,
+    "category": null
+  },
+  {
+    "timestamp": "2026-01-10 10:11:06",
+    "event": "ML flagged",
+    "confidence": 0.1,
+    "severity": "LOW",
+    "decision": "OBSERVE",
+    "category": "Exploitation"
+  },
+  {
+    "timestamp": "2026-01-10 10:11:08",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null,
+    "category": null
+  },
+  {
+    "timestamp": "2026-01-10 10:11:08",
+    "event": "ML flagged",
+    "confidence": 0.278,
+    "severity": "LOW",
+    "decision": "OBSERVE",
+    "category": "Exploitation"
+  },
+  {
+    "timestamp": "2026-01-10 10:11:14",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null,
+    "category": null
+  },
+  {
+    "timestamp": "2026-01-10 10:11:14",
+    "event": "ML flagged",
+    "confidence": 0.408,
+    "severity": "MEDIUM",
+    "decision": "ALERT",
+    "category": "Exploitation"
+  },
+  {
+    "timestamp": "2026-01-10 10:11:15",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null,
+    "category": null
+  },
+  {
+    "timestamp": "2026-01-10 10:11:15",
+    "event": "ML flagged",
+    "confidence": 0.525,
+    "severity": "MEDIUM",
+    "decision": "ALERT",
+    "category": "Exploitation"
+  },
+  {
+    "timestamp": "2026-01-10 10:11:16",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null,
+    "category": null
+  },
+  {
+    "timestamp": "2026-01-10 10:11:16",
+    "event": "ML flagged",
+    "confidence": 0.614,
+    "severity": "HIGH",
+    "decision": "ALERT",
+    "category": "Exploitation"
+  },
+  {
+    "timestamp": "2026-01-10 10:11:18",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null,
+    "category": null
+  },
+  {
+    "timestamp": "2026-01-10 10:11:18",
+    "event": "ML flagged",
+    "confidence": 0.681,
+    "severity": "HIGH",
+    "decision": "ALERT",
+    "category": "Exploitation"
+  },
+  {
+    "timestamp": "2026-01-10 10:11:22",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null,
+    "category": null
+  },
+  {
+    "timestamp": "2026-01-10 10:11:22",
+    "event": "ML flagged",
+    "confidence": 0.718,
+    "severity": "HIGH",
+    "decision": "ALERT",
+    "category": "Exploitation"
+  },
+  {
+    "timestamp": "2026-01-10 10:11:26",
+    "event": "Packet captured",
+    "confidence": null,
+    "severity": null,
+    "decision": null,
+    "category": null
+  },
+  {
+    "timestamp": "2026-01-10 10:11:26",
+    "event": "ML flagged",
+    "confidence": 0.746,
+    "severity": "CRITICAL",
+    "decision": "BLOCK",
+    "category": "Exploitation"
+  }
+]
