@@ -1657,3 +1657,332 @@ telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsucc
 2026-01-10 10:22:45,021 - LOW Exploitation 172.16.2.184 OBSERVE
 2026-01-10 10:22:45,505 - MEDIUM Exploitation 172.16.2.184 ALERT
 2026-01-10 10:23:24,108 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 12:39:23,282 - \U0001f680 FastAPI server started
+2026-01-10 12:40:23,746 - LOW Exploitation 172.16.2.152 OBSERVE
+2026-01-10 12:40:24,530 - LOW Exploitation 172.16.107.118 OBSERVE
+2026-01-10 12:40:24,919 - LOW Exploitation 172.16.2.152 OBSERVE
+2026-01-10 12:40:25,329 - MEDIUM Exploitation 172.16.2.152 ALERT
+2026-01-10 12:40:25,712 - MEDIUM Exploitation 172.16.2.152 ALERT
+2026-01-10 12:40:26,107 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 12:40:26,493 - LOW Exploitation 172.16.0.82 OBSERVE
+2026-01-10 12:40:26,870 - LOW Exploitation 172.16.8.74 OBSERVE
+2026-01-10 12:40:27,257 - LOW Exploitation 172.16.8.74 OBSERVE
+2026-01-10 12:40:27,645 - LOW Exploitation 172.16.5.71 OBSERVE
+2026-01-10 12:40:28,035 - MEDIUM Exploitation 172.16.8.74 ALERT
+2026-01-10 12:40:28,252 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 12:40:28,253 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 12:40:28,442 - MEDIUM Exploitation 172.16.8.74 ALERT
+2026-01-10 12:40:28,823 - HIGH Exploitation 172.16.8.74 ALERT
+2026-01-10 12:40:29,201 - HIGH Exploitation 172.16.8.74 ALERT
+2026-01-10 12:40:29,587 - CRITICAL Exploitation 172.16.8.74 BLOCK
+2026-01-10 12:40:32,469 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 12:40:32,470 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 12:40:37,915 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 12:40:37,917 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 12:40:44,290 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 12:40:44,291 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 12:40:49,912 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 12:40:49,913 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 12:40:57,777 - Threaded polling exception: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+2026-01-10 12:40:57,778 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1234, in __threaded_polling
+    polling_thread.raise_exceptions()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 115, in raise_exceptions
+    raise self.exception_info
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\util.py", line 97, in run
+    task(*args, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 688, in __retrieve_updates
+    updates = self.get_updates(offset=(self.last_update_id + 1),
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 660, in get_updates
+    json_updates = apihelper.get_updates(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 339, in get_updates
+    return _make_request(token, method_url, params=payload)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 168, in _make_request
+    json_result = _check_result(method_name, result)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 197, in _check_result
+    raise ApiTelegramException(method_name, result, result_json)
+telebot.apihelper.ApiTelegramException: A request to the Telegram API was unsuccessful. Error code: 409. Description: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running
+
+2026-01-10 12:40:59,651 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 12:41:56,354 - \U0001f680 FastAPI server started
+2026-01-10 12:43:33,339 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 12:45:19,345 - \U0001f680 FastAPI server started
+2026-01-10 12:45:38,470 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 13:01:58,816 - \U0001f680 FastAPI server started
+2026-01-10 13:02:02,978 - LOW Exploitation 172.16.6.36 OBSERVE
+2026-01-10 13:02:03,743 - LOW Exploitation 172.16.6.254 OBSERVE
+2026-01-10 13:02:04,199 - LOW Exploitation 172.16.6.254 OBSERVE
+2026-01-10 13:02:04,609 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 13:02:05,026 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 13:02:05,451 - LOW Exploitation 172.16.0.72 OBSERVE
+2026-01-10 13:02:05,843 - LOW Exploitation 172.16.0.72 OBSERVE
+2026-01-10 13:02:06,232 - LOW Exploitation 172.16.4.224 OBSERVE
+2026-01-10 13:02:06,622 - LOW Exploitation 172.16.4.224 OBSERVE
+2026-01-10 13:02:07,001 - LOW Exploitation 172.16.0.79 OBSERVE
+2026-01-10 13:02:07,375 - LOW Exploitation 172.16.0.79 OBSERVE
+2026-01-10 13:02:07,793 - LOW Exploitation 172.16.4.212 OBSERVE
+2026-01-10 13:02:08,160 - LOW Exploitation 172.16.4.212 OBSERVE
+2026-01-10 13:02:08,565 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 13:02:09,023 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 13:02:09,406 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 13:02:09,796 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 13:02:10,205 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 13:02:10,598 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 13:02:10,980 - LOW Exploitation 172.16.107.115 OBSERVE
+2026-01-10 13:02:11,367 - LOW Exploitation 172.16.8.78 OBSERVE
+2026-01-10 13:02:11,763 - LOW Exploitation 172.16.8.78 OBSERVE
+2026-01-10 13:02:12,127 - LOW Exploitation 172.16.3.45 OBSERVE
+2026-01-10 13:02:12,506 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 13:02:12,874 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 13:02:13,266 - LOW Exploitation 172.16.1.196 OBSERVE
+2026-01-10 13:02:13,690 - CRITICAL Exploitation 172.16.2.184 BLOCK
+2026-01-10 13:02:23,615 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 13:19:23,301 - \U0001f680 FastAPI server started
+2026-01-10 13:19:25,920 - LOW Exploitation 172.16.1.134 OBSERVE
+2026-01-10 13:19:27,707 - LOW Exploitation 172.16.1.134 OBSERVE
+2026-01-10 13:19:28,106 - MEDIUM Exploitation 172.16.1.134 ALERT
+2026-01-10 13:19:28,495 - LOW Exploitation 172.16.0.183 OBSERVE
+2026-01-10 13:19:28,884 - LOW Exploitation 172.16.0.72 OBSERVE
+2026-01-10 13:19:29,272 - LOW Exploitation 172.16.0.72 OBSERVE
+2026-01-10 13:19:29,690 - MEDIUM Exploitation 172.16.0.72 ALERT
+2026-01-10 13:19:30,081 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 13:19:30,472 - MEDIUM Exploitation 172.16.0.72 ALERT
+2026-01-10 13:19:30,957 - HIGH Exploitation 172.16.0.72 ALERT
+2026-01-10 13:19:31,442 - HIGH Exploitation 172.16.0.72 ALERT
+2026-01-10 13:19:31,849 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 13:19:32,255 - LOW Exploitation 172.16.2.29 OBSERVE
+2026-01-10 13:19:32,686 - LOW Exploitation 172.16.5.96 OBSERVE
+2026-01-10 13:19:33,141 - LOW Exploitation 172.16.16.146 OBSERVE
+2026-01-10 13:19:33,545 - LOW Exploitation 172.16.165.15 OBSERVE
+2026-01-10 13:19:33,984 - LOW Exploitation 172.16.77.177 OBSERVE
+2026-01-10 13:19:34,387 - LOW Exploitation 40.79.173.41 OBSERVE
+2026-01-10 13:19:34,806 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 13:19:35,260 - LOW Exploitation 40.79.173.41 OBSERVE
+2026-01-10 13:19:35,689 - LOW Exploitation 172.16.0.149 OBSERVE
+2026-01-10 13:19:36,118 - LOW Exploitation 172.16.0.79 OBSERVE
+2026-01-10 13:19:36,553 - LOW Exploitation 172.16.0.79 OBSERVE
+2026-01-10 13:19:36,994 - MEDIUM Exploitation 172.16.0.79 ALERT
+2026-01-10 13:19:37,450 - MEDIUM Exploitation 172.16.0.79 ALERT
+2026-01-10 13:19:37,855 - HIGH Exploitation 172.16.0.79 ALERT
+2026-01-10 13:19:38,366 - HIGH Exploitation 172.16.0.79 ALERT
+2026-01-10 13:19:38,750 - CRITICAL Exploitation 172.16.0.79 BLOCK
+2026-01-10 13:19:40,988 - Infinity polling exception: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)
+2026-01-10 13:19:41,187 - Exception traceback:
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 796, in connect
+    sock_and_verified = _ssl_wrap_socket_and_match_hostname(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connection.py", line 975, in _ssl_wrap_socket_and_match_hostname
+    ssl_sock = ssl_wrap_socket(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\ssl_.py", line 483, in ssl_wrap_socket
+    ssl_sock = _ssl_wrap_socket_impl(sock, context, tls_in_tls, server_hostname)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\ssl_.py", line 527, in _ssl_wrap_socket_impl
+    return ssl_context.wrap_socket(sock, server_hostname=server_hostname)
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 501, in wrap_socket
+    return self.sslsocket_class._create(
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1041, in _create
+    self.do_handshake()
+  File "C:\Users\Rosh05\AppData\Local\Programs\Python\Python39\lib\ssl.py", line 1310, in do_handshake
+    self._sslobj.do_handshake()
+socket.timeout: _ssl.c:1112: The handshake operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 644, in send
+    resp = conn.urlopen(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\retry.py", line 490, in increment
+    raise reraise(type(error), error, _stacktrace)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\util\util.py", line 39, in reraise
+    raise value
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 466, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=conn.timeout)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\urllib3\connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1110, in infinity_polling
+    self.polling(non_stop=True, timeout=timeout, long_polling_timeout=long_polling_timeout,
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1195, in polling
+    logger.info('Starting your bot with username: [@%s]', self.user.username)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 306, in user
+    self._user = self.get_me()
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\__init__.py", line 1382, in get_me
+    apihelper.get_me(self.token)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 204, in get_me
+    return _make_request(token, method_url)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\telebot\apihelper.py", line 162, in _make_request
+    result = _get_req_session().request(
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\Rosh05\Desktop\CRYPTON-main\venv\lib\site-packages\requests\adapters.py", line 690, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='api.telegram.org', port=443): Read timed out. (read timeout=15)
+
+2026-01-10 13:20:26,327 - \U0001f6d1 FastAPI server shutting down
+2026-01-10 14:27:21,363 - \U0001f680 FastAPI server started
+2026-01-10 14:27:29,906 - LOW Exploitation 172.16.7.157 OBSERVE
+2026-01-10 14:27:30,721 - LOW Exploitation 172.16.5.169 OBSERVE
+2026-01-10 14:27:31,119 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 14:27:31,521 - LOW Exploitation 202.65.141.82 OBSERVE
+2026-01-10 14:27:31,997 - LOW Exploitation 172.16.2.184 OBSERVE
+2026-01-10 14:27:32,417 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 14:27:32,812 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 14:27:33,288 - MEDIUM Exploitation 172.16.2.184 ALERT
+2026-01-10 14:27:33,696 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 14:27:34,131 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 14:27:34,572 - LOW Exploitation 172.16.0.71 OBSERVE
+2026-01-10 14:27:34,967 - LOW Exploitation 172.16.4.156 OBSERVE
+2026-01-10 14:27:35,387 - HIGH Exploitation 172.16.2.184 ALERT
+2026-01-10 14:27:35,773 - CRITICAL Exploitation 172.16.2.184 BLOCK
+2026-01-10 14:28:36,941 - LOW Exploitation 149.154.166.110 OBSERVE
+2026-01-10 14:28:37,390 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 14:28:37,809 - LOW Exploitation 172.16.107.114 OBSERVE
+2026-01-10 14:28:38,270 - LOW Exploitation 172.16.0.71 OBSERVE
+2026-01-10 14:28:38,663 - MEDIUM Exploitation 172.16.0.71 ALERT
+2026-01-10 14:28:39,053 - MEDIUM Exploitation 172.16.0.71 ALERT
+2026-01-10 14:28:39,440 - MEDIUM Exploitation 172.16.0.71 ALERT
+2026-01-10 14:28:39,824 - LOW Exploitation 172.16.112.111 OBSERVE
+2026-01-10 14:28:40,243 - LOW Exploitation 172.16.6.36 OBSERVE
+2026-01-10 14:28:40,651 - LOW Exploitation 172.16.6.101 OBSERVE
+2026-01-10 14:28:41,045 - LOW Exploitation 172.16.107.114 OBSERVE
+2026-01-10 14:28:41,469 - LOW Exploitation 172.16.112.141 OBSERVE
+2026-01-10 14:28:41,897 - MEDIUM Exploitation 172.16.107.114 ALERT
+2026-01-10 14:28:42,290 - LOW Exploitation 172.16.6.36 OBSERVE
+2026-01-10 14:28:42,704 - LOW Exploitation 172.16.112.112 OBSERVE
+2026-01-10 14:28:43,130 - LOW Exploitation 172.16.1.138 OBSERVE
+2026-01-10 14:28:43,543 - MEDIUM Exploitation 172.16.107.114 ALERT
+2026-01-10 14:28:43,961 - LOW Exploitation 172.16.112.66 OBSERVE
+2026-01-10 14:28:44,372 - HIGH Exploitation 172.16.107.114 ALERT
+2026-01-10 14:28:44,772 - LOW Exploitation 172.16.5.241 OBSERVE
+2026-01-10 14:28:45,174 - LOW Exploitation 172.16.4.7 OBSERVE
+2026-01-10 14:28:45,573 - HIGH Exploitation 172.16.107.114 ALERT
+2026-01-10 14:28:45,972 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 14:28:46,386 - HIGH Exploitation 149.154.166.110 ALERT
+2026-01-10 14:28:46,792 - HIGH Exploitation 149.154.166.110 ALERT
+2026-01-10 14:29:47,869 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 14:29:48,305 - MEDIUM Exploitation 149.154.166.110 ALERT
+2026-01-10 14:29:48,709 - HIGH Exploitation 149.154.166.110 ALERT
+2026-01-10 14:31:24,419 - \U0001f6d1 FastAPI server shutting down
+2026-01-25 11:33:29,503 - LOW Exploitation 192.168.1.11 OBSERVE
+2026-01-25 11:33:30,610 - LOW Exploitation 95.167.183.227 OBSERVE
+2026-01-25 11:33:34,498 - LOW Exploitation 192.168.1.11 OBSERVE
+2026-01-25 11:33:34,890 - LOW Exploitation 185.67.55.50 OBSERVE
+2026-01-25 11:33:39,506 - MEDIUM Exploitation 192.168.1.11 ALERT
+2026-01-25 11:33:39,902 - MEDIUM Exploitation 192.168.1.11 ALERT
+2026-01-25 11:33:40,439 - LOW Exploitation 20.42.65.85 OBSERVE
+2026-01-25 11:33:40,833 - HIGH Exploitation 192.168.1.11 ALERT
+2026-01-25 11:33:41,228 - HIGH Exploitation 192.168.1.11 ALERT
+2026-01-25 11:33:41,678 - LOW Exploitation 96.234.41.160 OBSERVE
+2026-01-25 11:33:42,062 - LOW Exploitation 20.42.65.85 OBSERVE
+2026-01-25 11:33:42,790 - CRITICAL Exploitation 192.168.1.11 BLOCK
