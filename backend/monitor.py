@@ -190,7 +190,7 @@ def start_ids():
     honeynet.start_honeynet()
     threading.Thread(target=bot.infinity_polling, daemon=True).start()
     threading.Thread(
-        target=lambda: scapy.sniff(filter="ip", prn=process_packet, store=0),
+        target=lambda: scapy.sniff(iface = "Wi-Fi", filter="ip", prn=process_packet, store=0),
         daemon=True
     ).start()
 
