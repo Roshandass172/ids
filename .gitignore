@@ -14,3 +14,4 @@ nosetests.xml
 coverage.xml
 *.egg-info
 .installed.cfg
+honeynet_logs.txt
