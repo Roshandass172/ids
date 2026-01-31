@@ -1,0 +1,73 @@
+import scapy.all as scapy
+import random
+import time
+from datetime import datetime
+
+# ================= CONFIG =================
+
+target_ip = "10.7.68.114"   # Victim / IDS machine
+# attacker_ip REMOVED (use real IP automatically)
+
+print(f"\n🚨 ATTACK SIMULATION STARTED -> TARGET: {target_ip}\n")
+
+# =========================================
+
+def dos_attack():
+    print(f"\n [DoS] Sending packets at {datetime.now().strftime('%H:%M:%S')}")
+    for _ in range(50):  # keep small for lab safety
+        packet = scapy.IP(dst=target_ip) / \
+                 scapy.TCP(
+                     sport=random.randint(1024, 65535),
+                     dport=80,
+                     flags="S"
+                 ) / \
+                 scapy.Raw(load="###DOS_ATTACK###")
+
+        scapy.send(packet, verbose=False)
+
+    print("📦 Sent 50 DoS packets with payload '###DOS_ATTACK###'")
+
+
+def port_scan():
+    print(f"\n[Port Scan] Starting scan at {datetime.now().strftime('%H:%M:%S')}")
+    for port in range(20, 30):
+        print(f"➡ Scanning Port {port}...")
+
+        packet = scapy.IP(dst=target_ip) / \
+                 scapy.TCP(
+                     sport=random.randint(1024, 65535),
+                     dport=port,
+                     flags="S"
+                 ) / \
+                 scapy.Raw(load="###PORT_SCAN###")
+
+        scapy.send(packet, verbose=False)
+        time.sleep(0.2)
+
+    print("✅ Port scan completed")
+
+
+def ddos_attack():
+    print(f"\n🌩️ [DDoS SIMULATION] Sending burst packets at {datetime.now().strftime('%H:%M:%S')}")
+    for _ in range(100):
+        packet = scapy.IP(dst=target_ip) / \
+                 scapy.TCP(
+                     sport=random.randint(1024, 65535),
+                     dport=80,
+                     flags="S"
+                 ) / \
+                 scapy.Raw(load="###DDOS_ATTACK###")
+
+        scapy.send(packet, verbose=False)
+
+    print("📦 Sent 100 burst packets with payload '###DDOS_ATTACK###'")
+
+
+try:
+    while True:
+        attack = random.choice([dos_attack, port_scan])
+        attack()
+        time.sleep(5)
+
+except KeyboardInterrupt:
+    print("\n🛑 Attack simulation stopped by user.")
